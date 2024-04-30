@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 
 Prepare your request: To authenticate, you will need to send a request to the Reg Hub authentication endpoint. Your request must include the following parameters:
 
-* URL: https://auth.reghub.uat/connect/token
+* URL: https://auth.reghub.dev/connect/token
 * Method: POST
 * Headers: Content-Type: application/x-www-form-urlencoded
 
@@ -148,7 +148,7 @@ Validation Warnings are issues that are not required to be fixed prior to submis
 | IndividualDealer | 8 |
 
 ### Swagger Documentation
-https://api.reghub.uat/swagger/index.html
+https://api.reghub.dev/swagger/index.html
 
 ### Rules
-https://api.reghub.uat/api/v1/Validation/Rules/{country}/{jurisdiction}/{orderTypeID}
+https://api.reghub.dev/api/v1/Validation/Rules/{country}/{jurisdiction}/{orderTypeID}
