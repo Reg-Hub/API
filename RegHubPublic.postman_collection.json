@@ -59,7 +59,7 @@
 								},
 								{
 									"key": "password",
-									"value": "password!",
+									"value": "password",
 									"type": "text"
 								},
 								{
@@ -70,12 +70,13 @@
 							]
 						},
 						"url": {
-							"raw": "https://localhost:5001/connect/token",
+							"raw": "https://auth.reghub.dev/connect/token",
 							"protocol": "https",
 							"host": [
-								"localhost"
+								"auth",
+								"reghub",
+								"dev"
 							],
-							"port": "5001",
 							"path": [
 								"connect",
 								"token"
@@ -121,12 +122,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -152,12 +154,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -184,12 +187,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -219,12 +223,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -251,12 +256,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -273,22 +279,14 @@
 							"request": {
 								"method": "POST",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}/Submit",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}/Submit",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -303,28 +301,17 @@
 						},
 						{
 							"name": "Get Asset Search Order Results",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"PatchedTestAssetSearch\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}/Results",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}/Results",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -339,35 +326,25 @@
 						},
 						{
 							"name": "Get Asset Search Order Result Document",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"PatchedTestAssetSearch\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/AssetSearches/{{orderId}}/Results",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/AssetSearches/{{orderId}}/Results/Document",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
 										"Orders",
 										"AssetSearches",
 										"{{orderId}}",
-										"Results"
+										"Results",
+										"Document"
 									]
 								}
 							},
@@ -399,7 +376,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n  \"referenceNumber\": \"TestDebtorSearch\",\r\n  \"orderTypeID\": \"DebtorSearch\",\r\n  \"jurisdiction\": \"BC\",\r\n  \"country\": \"CA\",\r\n  \"debtor\": {\r\n    \"partyTypeID\": \"IndividualDebtor\",\r\n    \"firstName\": \"Jeff\",\r\n    \"middleName\": \"\",\r\n    \"lastName\": \"Chimney\"\r\n  },\r\n  \"searchParameters\": {\r\n    // where available\r\n    //\"exactOnlyResults\": true,\r\n    //\"searchFromDate\": \"2020-01-01\",\r\n    //\"searchToDate\": \"2024-01-01\"\r\n  }\r\n}",
+									"raw": "{\r\n  \"referenceNumber\": \"TestDebtorSearch\",\r\n  \"orderTypeID\": \"DebtorSearch\",\r\n  \"jurisdiction\": \"BC\",\r\n  \"country\": \"CA\",\r\n  \"debtor\": {\r\n    \"partyTypeID\": \"IndividualDebtor\",\r\n    \"firstName\": \"Test\",\r\n    \"middleName\": \"\",\r\n    \"lastName\": \"Debtor\"\r\n  },\r\n  \"searchParameters\": {\r\n    // where available\r\n    //\"exactOnlyResults\": true,\r\n    //\"searchFromDate\": \"2020-01-01\",\r\n    //\"searchToDate\": \"2024-01-01\"\r\n  }\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -407,12 +384,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/DebtorSearches",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -450,12 +428,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/DebtorSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -494,12 +473,13 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/DebtorSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -529,12 +509,13 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/DebtorSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -560,28 +541,17 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"PatchedTestAssetSearch\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
-									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}",
-									"protocol": "http",
+									"raw": "https://api.reghub.dev/api/v1/Orders/DebtorSearches/{{orderId}}",
+									"protocol": "https",
 									"host": [
-										"localhost"
+										"api",
+										"reghub",
+										"dev"
 									],
-									"port": "5017",
 									"path": [
 										"api",
 										"v1",
@@ -643,21 +613,9 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"PatchedTestAssetSearch\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}/Results",
 									"protocol": "http",
@@ -691,21 +649,9 @@
 									}
 								}
 							],
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
 							"request": {
 								"method": "GET",
 								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"PatchedTestAssetSearch\"\r\n    }\r\n]",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
 								"url": {
 									"raw": "http://localhost:5017/api/v1/Orders/DebtorSearches/{{orderId}}/Results/Document",
 									"protocol": "http",
@@ -727,6 +673,32 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "Get Validation Rules",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://api.reghub.dev/api/v1/Validation/Rules/CA/AB/DebtorSearch",
+							"protocol": "https",
+							"host": [
+								"api",
+								"reghub",
+								"dev"
+							],
+							"path": [
+								"api",
+								"v1",
+								"Validation",
+								"Rules",
+								"CA",
+								"AB",
+								"DebtorSearch"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		}
