@@ -1,0 +1,377 @@
+{
+    "metadata": {
+        "searchJurisdiction": "string",
+        "searchCountry": "string",
+        "typeOfSearch": "string",
+        "searchCriteria": "string",
+        "fileCurrency": "dateTime",
+        "errors": [
+            "string"
+        ],
+        "warnings": [
+            "string"
+        ],
+        "totalExactResults": "integer",
+        "totalSimilarResults": "integer",
+        "TotalUnparsedResults": "integer",
+        "totalResults": "integer",
+        "numberOfFamilites": "integer"
+    },
+    "exactResults": [
+        {
+            "metadata": {
+                "resultNumber": "integer",
+                "resultType": "string",
+                "baseRegistrationNumber": "string",
+                "familyNumber": "integer",
+                "registrationDescription": "string",
+                "registrationAct": "string"
+            },
+            "result": {
+                "id": "guid",
+                "jurisdiction": "string",
+                "country": "string",
+                "orderType": {
+                    "name": "string"
+                },
+                "lien": {
+                    "registrationNumber": "string",
+                    "registrationDate": "string",
+                    "generalCollateral": {
+                        "collateralValue": "string",
+                        "collateralToAdd": "string",
+                        "collateralToRemove": "string"
+                    },
+                    "trustIndenture": "boolean",
+                    "rin": "string",
+                    "mvIncluded": "boolean",
+                    "cautionFiling": "boolean",
+                    "consumerGoods": "boolean",
+                    "inventory": "boolean",
+                    "equipment": "boolean",
+                    "accounts": "boolean",
+                    "other": "boolean",
+                    "noFixedMaturityDate": "boolean",
+                    "maturityDate": "dateTime",
+                    "fileNumber": "string",
+                    "courtOrder": "string",
+                    "otherChanges": "string",
+                    "stillHavePosession": "boolean",
+                    "vehicleReleasedDate": "dateTime",
+                    "workLastCompletedDate": "dateTime",
+                    "partsProvidedDate": "dateTime",
+                    "perfectionInAnotherJurisdiction": "boolean",
+                    "purchaseMoneySecurityInterest": "boolean",
+                    "receiverAppointment": "boolean",
+                    "surrenderDate": "dateTime",
+                    "qcFormType": {
+                        "name": "string"
+                    },
+                    "sumOfHypothec": "string",
+                    "signingDate": "dateTime",
+                    "signingLocation": "string",
+                    "term": "integer",
+                    "isInfiniteTerm": "boolean",
+                    "expiryDate": "dateTime",
+                    "loanDate": "dateTime",
+                    "amount": "decimal",
+                    "additionalInformation": "string",
+                    "dateOfInstrument": "dateTime",
+                    "issueDate": "dateTime",
+                    "releaseDate": "dateTime",
+                    "nameOfNotary": "string",
+                    "formOfAct": "string",
+                    "scopeOfTransfer": "string",
+                    "addressNoticeNumbers": [
+                        "string"
+                    ],
+                    "minuteNumber": "string",
+                    "rectifications": "string",
+                    "globalRegistration": "boolean",
+                    "remarks": [
+                        {
+                            "value": "string",
+                            "registrations": [
+                                {
+                                    "registrationNumber": "string",
+                                    "registrationDate": "dateTime"
+                                }
+                            ]
+                        }
+                    ],
+                    "ReferenceToTheSpecifiedRegistration": [
+                        {
+                            "value": "string",
+                            "registrations": [
+                                {
+                                    "registrationNumber": "string",
+                                    "registrationDate": "dateTime"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "courtInformation": {
+                    "amount": "decimal",
+                    "judgementDate": "dateTime",
+                    "JudgementIssueDate": "dateTime",
+                    "dateFiled": "dateTime",
+                    "courtFileNumber": "string",
+                    "courtName": "string"
+                },
+                "seizureInformation": {
+                    "serviceArea": "string",
+                    "seizureValue": "decimal",
+                    "seizureDate": "dateTime"
+                },
+                "discharge": {
+                    "dischargeNumber": "string",
+                    "dischargeDate": "dateTime"
+                },
+                "amendment": {
+                    "reasonText": "string"
+                },
+                "parties": [
+                    {
+                        "id": "guid",
+                        "partyType": {
+                            "name": "string"
+                        },
+                        "contactDetails": {
+                            "address": {
+                                "streetNumber": "string",
+                                "streetName": "string",
+                                "unit": "string",
+                                "city": "string",
+                                "jurisdiction": "string",
+                                "postalCode": "string",
+                                "countryCode": "string"
+                            },
+                            "email": "string",
+                            "phoneNumber": "string",
+                            "faxNumber": "string"
+                        },
+                        "generation": {
+                            "name": "string"
+                        },
+                        "busName": "string",
+                        "firstName": "string",
+                        "middleName": "string",
+                        "lastName": "string",
+                        "isEstate": "boolean",
+                        "dateOfBirth": "dateTime",
+                        "priority": "integer",
+                        "busNumber": "string"
+                    }
+                ],
+                "assets": [
+                    {
+                        "id": "guid",
+                        "assetType": {
+                            "name": "string"
+                        },
+                        "description": "string",
+                        "manufacturedHomeRegistrationNumber": "string",
+                        "serialNumber": "string",
+                        "make": "string",
+                        "model": "string",
+                        "color": "string",
+                        "year": "integer",
+                        "priority": "integer"
+                    }
+                ],
+                "orderChanges": [
+                    {
+                        "operation": "string",
+                        "originalEntityID": "guid",
+                        "originalValue": "string",
+                        "newValue": "string"
+                    }
+                ],
+                "referenceNumber": "string"
+            }
+        }
+    ],
+    "similarResults": [
+        {
+            "metadata": {
+                "resultNumber": "integer",
+                "resultType": "string",
+                "baseRegistrationNumber": "string",
+                "familyNumber": "integer",
+                "registrationDescription": "string",
+                "registrationAct": "string"
+            },
+            "result": {
+                "id": "guid",
+                "jurisdiction": "string",
+                "country": "string",
+                "orderType": {
+                    "name": "string"
+                },
+                "lien": {
+                    "registrationNumber": "string",
+                    "registrationDate": "string",
+                    "generalCollateral": {
+                        "collateralValue": "string",
+                        "collateralToAdd": "string",
+                        "collateralToRemove": "string"
+                    },
+                    "trustIndenture": "boolean",
+                    "rin": "string",
+                    "mvIncluded": "boolean",
+                    "cautionFiling": "boolean",
+                    "consumerGoods": "boolean",
+                    "inventory": "boolean",
+                    "equipment": "boolean",
+                    "accounts": "boolean",
+                    "other": "boolean",
+                    "noFixedMaturityDate": "boolean",
+                    "maturityDate": "dateTime",
+                    "fileNumber": "string",
+                    "courtOrder": "string",
+                    "otherChanges": "string",
+                    "stillHavePosession": "boolean",
+                    "vehicleReleasedDate": "dateTime",
+                    "workLastCompletedDate": "dateTime",
+                    "partsProvidedDate": "dateTime",
+                    "perfectionInAnotherJurisdiction": "boolean",
+                    "purchaseMoneySecurityInterest": "boolean",
+                    "receiverAppointment": "boolean",
+                    "surrenderDate": "dateTime",
+                    "qcFormType": {
+                        "name": "string"
+                    },
+                    "sumOfHypothec": "string",
+                    "signingDate": "dateTime",
+                    "signingLocation": "string",
+                    "term": "integer",
+                    "isInfiniteTerm": "boolean",
+                    "expiryDate": "dateTime",
+                    "loanDate": "dateTime",
+                    "amount": "decimal",
+                    "additionalInformation": "string",
+                    "dateOfInstrument": "dateTime",
+                    "issueDate": "dateTime",
+                    "releaseDate": "dateTime",
+                    "nameOfNotary": "string",
+                    "formOfAct": "string",
+                    "scopeOfTransfer": "string",
+                    "addressNoticeNumbers": [
+                        "string"
+                    ],
+                    "minuteNumber": "string",
+                    "rectifications": "string",
+                    "globalRegistration": "boolean",
+                    "remarks": [
+                        {
+                            "value": "string",
+                            "registrations": [
+                                {
+                                    "registrationNumber": "string",
+                                    "registrationDate": "dateTime"
+                                }
+                            ]
+                        }
+                    ],
+                    "ReferenceToTheSpecifiedRegistration": [
+                        {
+                            "value": "string",
+                            "registrations": [
+                                {
+                                    "registrationNumber": "string",
+                                    "registrationDate": "dateTime"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "courtInformation": {
+                    "amount": "decimal",
+                    "judgementDate": "dateTime",
+                    "JudgementIssueDate": "dateTime",
+                    "dateFiled": "dateTime",
+                    "courtFileNumber": "string",
+                    "courtName": "string"
+                },
+                "seizureInformation": {
+                    "serviceArea": "string",
+                    "seizureValue": "decimal",
+                    "seizureDate": "dateTime"
+                },
+                "discharge": {
+                    "dischargeNumber": "string",
+                    "dischargeDate": "dateTime"
+                },
+                "amendment": {
+                    "reasonText": "string"
+                },
+                "parties": [
+                    {
+                        "id": "guid",
+                        "partyType": {
+                            "name": "string"
+                        },
+                        "contactDetails": {
+                            "address": {
+                                "streetNumber": "string",
+                                "streetName": "string",
+                                "unit": "string",
+                                "city": "string",
+                                "jurisdiction": "string",
+                                "postalCode": "string",
+                                "countryCode": "string"
+                            },
+                            "email": "string",
+                            "phoneNumber": "string",
+                            "faxNumber": "string"
+                        },
+                        "generation": {
+                            "name": "string"
+                        },
+                        "busName": "string",
+                        "firstName": "string",
+                        "middleName": "string",
+                        "lastName": "string",
+                        "isEstate": "boolean",
+                        "dateOfBirth": "dateTime",
+                        "priority": "integer",
+                        "busNumber": "string"
+                    }
+                ],
+                "assets": [
+                    {
+                        "id": "guid",
+                        "assetType": {
+                            "name": "string"
+                        },
+                        "description": "string",
+                        "manufacturedHomeRegistrationNumber": "string",
+                        "serialNumber": "string",
+                        "make": "string",
+                        "model": "string",
+                        "color": "string",
+                        "year": "integer",
+                        "priority": "integer"
+                    }
+                ],
+                "orderChanges": [
+                    {
+                        "operation": "string",
+                        "originalEntityID": "guid",
+                        "originalValue": "string",
+                        "newValue": "string"
+                    }
+                ],
+                "referenceNumber": "string"
+            }
+        }
+    ],
+    "unparsedResults": [
+        {
+            "familyNumber": "integer",
+            "registrationType": "string",
+            "registrationNumber": "string"
+        }
+    ]
+}
