@@ -149,6 +149,3 @@ Validation Warnings are issues that are not required to be fixed prior to submis
 
 ### Swagger Documentation
 https://api.reghub.dev/swagger/index.html
-
-### Rules
-https://api.reghub.dev/api/v1/Validation/Rules/{country}/{jurisdiction}/{orderTypeID}
