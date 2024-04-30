@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 
 Prepare your request: To authenticate, you will need to send a request to the Reg Hub authentication endpoint. Your request must include the following parameters:
 
-* URL: (URL_TO_BE_DETERMINED)/connect/token
+* URL: https://auth.reghub.uat/connect/token
 * Method: POST
 * Headers: Content-Type: application/x-www-form-urlencoded
 
@@ -94,11 +94,61 @@ Validation Errors are issues that are required to be fixed prior to submission. 
 ### Warnings
 Validation Warnings are issues that are not required to be fixed prior to submission, but Reg Hub wants you to be aware of. They are determined on an order-by-order basis, but there is a Validation Rules endpoint (get) to get a list of all possible warning for a given Order Type and Jurisdiction.
 
-### Rules
-___INSERT LINK TO RULES ENDPOINT___
+### Enumerations
+
+#### Asset Type
+| Description | Value |
+| ----------- | ----- |
+| MotorVehicle | 1 |
+| Trailer | 2 |
+| Boat | 3 |
+| MobileHome | 4 |
+| OutboardMotor | 5 |
+| AircraftRegisteredInCanada | 6 |
+| AircraftNonRegisteredInCanada | 7 |
+| ManufacturedHome | 8 |
+| FarmVehicle | 9 |
+| Motorcycle | 10 |
+| Bus | 11 |
+| MiniBus | 12 |
+| Taxi | 13 |
+| AllTerainVehicle | 14 |
+| Snowmobile | 15 |
+| PassengerVehicle | 16 |
+| EmergencyVehicle | 17 |
+| CommercialVehicle | 18 |
+| Other | 19 |
+
+#### Document Result Type
+
+| Description | Value |
+| ----------- | ----- |
+| NoResult | 1 |
+| RawDocument | 2 |
+| ParsedDocument | 3 |
+
+#### Order State
+| Description | Value |
+| ----------- | ----- |
+| Draft | 1 |
+| Pending | 2 |
+| Complete | 3 |
+| Invalid | 4 |
+
+#### Party Type
+| Description | Value |
+| ----------- | ----- |
+| BusinessDebtor | 1 |
+| IndividualDebtor | 2 |
+| BusinessSecuredParty | 3 |
+| IndividualSecuredParty | 4 |
+| BusinessRegisteringAgent | 5 |
+| IndividualRegisteringAgent | 6 |
+| BusinessDealer | 7 |
+| IndividualDealer | 8 |
 
 ### Swagger Documentation
-___INSERT LINK HERE___
+https://api.reghub.uat/swagger/index.html
 
-### Public Postman Project
-___INSERT GITHUB LINK HERE___
+### Rules
+https://api.reghub.uat/api/v1/Validation/Rules/{country}/{jurisdiction}/{orderTypeID}
