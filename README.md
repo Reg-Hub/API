@@ -94,7 +94,32 @@ Validation Errors are issues that are required to be fixed prior to submission. 
 ### Warnings
 Validation Warnings are issues that are not required to be fixed prior to submission, but Reg Hub wants you to be aware of. They are determined on an order-by-order basis, but there is a Validation Rules endpoint (get) to get a list of all possible warning for a given Order Type and Jurisdiction.
 
-### Enumerations
+----
+
+## Search Specific Information
+
+### Search Parameters
+Not all fields in the searchParameters field will be used in all jurisdictions. Below is a list of what fields are available in each jurisdiction.
+
+| Jurisdiction | ExactOnlyResults | SearchFromDate | SearchToDate |
+| ------------ | ---------------- | -------------- | ------------ |
+| BC | X | | |
+| AB | X | | |
+| SK | X | | |
+| MB | X | | |
+| ON | X | X | |
+| QC | X | | |
+| NL | X | | |
+| NS | X | | |
+| NB | X | | |
+| PE | X | | |
+| YT | X | | |
+| NT | X | | |
+| NU | X | | |
+
+----
+
+## Enumerations
 
 #### Asset Type
 | Description | Value |
