@@ -14,7 +14,7 @@ Before you begin, ensure you have the following:
 
 Prepare your request: To authenticate, you will need to send a request to the Reg Hub authentication endpoint. Your request must include the following parameters:
 
-* URL: https://auth.reghub.dev/connect/token
+* URL: https://auth.uat.reghub.ca/connect/token
 * Method: POST
 * Headers: Content-Type: application/x-www-form-urlencoded
 
@@ -122,27 +122,36 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 ## Enumerations
 
 #### Asset Type
-| Description | Value |
-| ----------- | ----- |
-| MotorVehicle | 1 |
-| Trailer | 2 |
-| Boat | 3 |
-| MobileHome | 4 |
-| OutboardMotor | 5 |
-| AircraftRegisteredInCanada | 6 |
-| AircraftNonRegisteredInCanada | 7 |
-| ManufacturedHome | 8 |
-| FarmVehicle | 9 |
-| Motorcycle | 10 |
-| Bus | 11 |
-| MiniBus | 12 |
-| Taxi | 13 |
-| AllTerainVehicle | 14 |
-| Snowmobile | 15 |
-| PassengerVehicle | 16 |
-| EmergencyVehicle | 17 |
-| CommercialVehicle | 18 |
-| Other | 19 |
+| Description                           | Value |
+|---------------------------------------|-------|
+| MotorVehicle                          | 1     |
+| Trailer                               | 2     |
+| Boat                                  | 3     |
+| MobileHome                            | 4     |
+| OutboardMotor                         | 5     |
+| AircraftRegisteredInCanada            | 6     |
+| AircraftNonRegisteredInCanada         | 7     |
+| ManufacturedHome                      | 8     |
+| FarmVehicle                           | 9     |
+| Motorcycle                            | 10    |
+| Bus                                   | 11    |
+| MiniBus                               | 12    |
+| Taxi                                  | 13    |
+| AllTerrainVehicle                     | 14    |
+| SnowmobilePost1988                    | 15    |
+| PassengerVehicle                      | 16    |
+| EmergencyVehicle                      | 17    |
+| CommercialVehicle                     | 18    |
+| Other                                 | 19    |
+| AircraftCanada                        | 20    |
+| AircraftForeign                       | 21    |
+| AircraftAirframeRegisteredInCanada    | 22    |
+| AircraftAirframeNotRegisteredInCanada | 23    |
+| Aircraft                              | 24    |
+| AircraftDOT                           | 25    |
+| AircraftSerial                        | 26    |
+| TrailerOrSemiTrailer                  | 27    |
+| MotorHome                             | 28    |
 
 #### Document Result Type
 
@@ -173,4 +182,4 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | IndividualDealer | 8 |
 
 ### Swagger Documentation
-https://api.reghub.dev/swagger/index.html
+https://api.uat.reghub.ca/swagger/index.html
