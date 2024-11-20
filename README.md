@@ -122,36 +122,27 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 ## Enumerations
 
 #### Asset Type
-| Description                           | Value |
-|---------------------------------------|-------|
-| MotorVehicle                          | 1     |
-| Trailer                               | 2     |
-| Boat                                  | 3     |
-| MobileHome                            | 4     |
-| OutboardMotor                         | 5     |
-| AircraftRegisteredInCanada            | 6     |
-| AircraftNonRegisteredInCanada         | 7     |
-| ManufacturedHome                      | 8     |
-| FarmVehicle                           | 9     |
-| Motorcycle                            | 10    |
-| Bus                                   | 11    |
-| MiniBus                               | 12    |
-| Taxi                                  | 13    |
-| AllTerrainVehicle                     | 14    |
-| SnowmobilePost1988                    | 15    |
-| PassengerVehicle                      | 16    |
-| EmergencyVehicle                      | 17    |
-| CommercialVehicle                     | 18    |
-| Other                                 | 19    |
-| AircraftCanada                        | 20    |
-| AircraftForeign                       | 21    |
-| AircraftAirframeRegisteredInCanada    | 22    |
-| AircraftAirframeNotRegisteredInCanada | 23    |
-| Aircraft                              | 24    |
-| AircraftDOT                           | 25    |
-| AircraftSerial                        | 26    |
-| TrailerOrSemiTrailer                  | 27    |
-| MotorHome                             | 28    |
+| Description                     | Value | BC | AB | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
+| ------------------------------- | ----- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| MotorVehicle                    | 1     | X  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
+| Trailer                         | 2     | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  | X  |
+| Boat                            | 3     | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
+| MobileHome                      | 4     |    | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
+| OutboardMotor                   | 5     | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
+| AircraftRegisteredInCanada      | 6     | X  |    |    |    |    |    | X  | X  | X  | X  | X  | X  | X  |
+| AircraftNonRegisteredInCanada   | 7     | X  |    |    |    |    |    | X  | X  | X  | X  | X  | X  | X  |
+| ManufacturedHome                | 8     | X  | X  |    |    |    |    |    |    |    |    |    |    |    |
+| FarmVehicle                     | 9     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| Motorcycle                      | 10    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| Bus                             | 11    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| MiniBus                         | 12    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| Taxi                            | 13    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| AllTerainVehicle                | 14    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| Snowmobile                      | 15    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| PassengerVehicle                | 16    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| EmergencyVehicle                | 17    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| CommercialVehicle               | 18    |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| Other                           | 19    |    |    |    |    |    |    |    |    |    |    |    |    |    |
 
 #### Document Result Type
 
