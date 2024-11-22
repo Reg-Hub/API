@@ -154,33 +154,36 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | MotorHome                                  | 28  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 
 #### Valid Asset Types Per Jurisdiction (Base Order Type: Repair Lien)
-| Description                       | Value | BC | AB | SK | MB | ON | YT | NT | NU | NL | NB | NS | PE |
-| --------------------------------- | ----- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
-| MotorVehicle                       | 1     | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
-| Trailer                            | 2     | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
-| Boat                               | 3     | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
-| MobileHome                         | 4     |    | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
-| OutboardMotor                      | 5     | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
-| AircraftRegisteredInCanada         | 6     | X  |    |    |    |    | X  | X  | X  | X  | X  | X  | X  |
-| AircraftNonRegisteredInCanada      | 7     | X  |    |    |    |    | X  | X  | X  | X  | X  | X  | X  |
-| ManufacturedHome                   | 8     | X  | X  |    |    |    |    |    |    |    |    |    |    |
-| FarmVehicle                        | 9     |    |    |    |    |    |    |    |    |    |    |    |    |
-| Motorcycle                         | 10    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Bus                                | 11    |    |    |    |    |    |    |    |    |    |    |    |    |
-| MiniBus                            | 12    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Taxi                               | 13    |    |    |    |    |    |    |    |    |    |    |    |    |
-| AllTerainVehicle                   | 14    |    |    |    |    |    |    |    |    |    |    |    |    |
-| SnowmobilePost1988                 | 15    |    |    |    |    |    |    |    |    |    |    |    |    |
-| PassengerVehicle                   | 16    |    |    |    |    |    |    |    |    |    |    |    |    |
-| EmergencyVehicle                   | 17    |    |    |    |    |    |    |    |    |    |    |    |    |
-| CommercialVehicle                  | 18    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Other                              | 19    |    |    |    |    |    |    |    |    |    |    |    |    |
-| AircraftCanada                     | 20    |    |    |    |    |    |    |    |    |    |    |    |    |
-| AircraftForeign                    | 21    |    |    |    |    |    |    |    |    |    |    |    |    |
-| AircraftAirframeRegisteredInCanada | 22    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Other                           | 19    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Other                           | 19    |    |    |    |    |    |    |    |    |    |    |    |    |
-| Other                           | 19    |    |    |    |    |    |    |    |    |    |    |    |    |
+| Description                                | ID  | AB | BC | SK | MB | ON | YT | NT | NU |
+| ------------------------------------------ | --- | -- | -- | -- | -- | -- | -- | -- | -- |
+| MotorVehicle                               |  1  | X  | X  | X  | X  | X  | X  | X  | X  |
+| Trailer                                    |  2  |    | X  | X  | X  |    | X  | X  | X  |
+| Boat                                       |  3  | X  | X  | X  | X  |    | X  | X  | X  |
+| MobileHome                                 |  4  |    |    | X  | X  |    | X  | X  | X  |
+| OutboardMotor                              |  5  | X  | X  | X  | X  |    | X  | X  | X  |
+| AircraftRegisteredInCanada                 |  6  |    |    |    |    |    | X  | X  | X  |
+| AircraftNonRegisteredInCanada              |  7  |    |    |    |    |    | X  | X  | X  |
+| ManufacturedHome                           |  8  |    |    |    |    |    |    |    |    |
+| FarmVehicle                                |  9  | X  |    |    |    |    |    |    |    |
+| Motorcycle                                 | 10  |    |    |    |    |    |    |    |    |
+| Bus                                        | 11  |    |    |    |    |    |    |    |    |
+| MiniBus                                    | 12  |    |    |    |    |    |    |    |    |
+| Taxi                                       | 13  |    |    |    |    |    |    |    |    |
+| AllTerrainVehicle                          | 14  |    |    |    |    |    |    |    |    |
+| SnowmobilePost1988                         | 15  |    |    |    |    |    |    |    |    |
+| PassengerVehicle                           | 16  |    |    |    |    |    |    |    |    |
+| EmergencyVehicle                           | 17  |    |    |    |    |    |    |    |    |
+| CommercialVehicle                          | 18  |    |    |    |    |    |    |    |    |
+| Other                                      | 19  |    |    |    |    |    |    |    |    |
+| AircraftCanada                             | 20  | X  |    |    |    |    |    |    |    |
+| AircraftForeign                            | 21  | X  |    |    |    |    |    |    |    |
+| AircraftAirframeRegisteredInCanada         | 22  |    | X  |    |    |    |    |    |    |
+| AircraftAirframeNotRegisteredInCanada      | 23  |    | X  |    |    |    |    |    |    |
+| Aircraft                                   | 24  |    |    |    | X  |    |    |    |    |
+| AircraftDOT                                | 25  |    |    | X  |    |    |    |    |    |
+| AircraftSerial                             | 26  |    |    | X  |    |    |    |    |    |
+| TrailerOrSemiTrailer                       | 27  |    |    |    |    |    |    |    |    |
+| MotorHome                                  | 28  |    |    |    |    |    |    |    |    |
 
 #### Document Result Type
 
