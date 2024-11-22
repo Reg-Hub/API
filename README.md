@@ -122,9 +122,8 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 ## Enumerations
 
 #### Valid Asset Types Per Jurisdiction (Base Order Type: Lien)
-+--------------------------------------------+-----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 | Description                                | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
-+--------------------------------------------+-----+----+----+----+----+----+----+----+----+----+----+----+----+----+
+| ------------------------------------------ | --- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | MotorVehicle                               |  1  | X  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
 | Trailer                                    |  2  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  | X  |
 | Boat                                       |  3  | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
@@ -153,7 +152,6 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | AircraftSerial                             | 26  |    |    | X  |    |    |    |    |    |    |    |    |    |    |
 | TrailerOrSemiTrailer                       | 27  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | MotorHome                                  | 28  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
-+--------------------------------------------+-----+----+----+----+----+----+----+----+----+----+----+----+----+----+
 
 #### Valid Asset Types Per Jurisdiction (Base Order Type: Repair Lien)
 | Description                       | Value | BC | AB | SK | MB | ON | YT | NT | NU | NL | NB | NS | PE |
