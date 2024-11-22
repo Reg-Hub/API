@@ -185,14 +185,25 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | TrailerOrSemiTrailer                       | 27  |    |    |    |    |    |    |    |    |
 | MotorHome                                  | 28  |    |    |    |    |    |    |    |    |
 
-#### Document Result Type
+#### Valid Party Types per jurisdiction
+| Description               | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
+| ------------------------- | --- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
+| BusinessDebtor            |  1  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| IndividualDebtor          |  2  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| BusinessSecuredParty      |  3  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| IndividualSecuredParty    |  4  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| BusinessRegisteringAgent  |  5  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
+| IndividualRegisteringAgent|  6  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
+| BusinessDealer            |  7  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+| IndividualDealer          |  8  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+Note: For dealers in QC, the validity of this provided party type depends on the form type being used.
 
+#### Document Result Type
 | Description | Value |
 | ----------- | ----- |
 | NoResult | 1 |
 | RawDocument | 2 |
 | ParsedDocument | 3 |
-
 #### Order State
 | Description | Value |
 | ----------- | ----- |
@@ -200,18 +211,6 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | Pending | 2 |
 | Complete | 3 |
 | Invalid | 4 |
-
-#### Party Type
-| Description | Value |
-| ----------- | ----- |
-| BusinessDebtor | 1 |
-| IndividualDebtor | 2 |
-| BusinessSecuredParty | 3 |
-| IndividualSecuredParty | 4 |
-| BusinessRegisteringAgent | 5 |
-| IndividualRegisteringAgent | 6 |
-| BusinessDealer | 7 |
-| IndividualDealer | 8 |
 
 ### Swagger Documentation
 https://api.uat.reghub.ca/swagger/index.html
