@@ -196,6 +196,7 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | IndividualRegisteringAgent|  6  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
 | BusinessDealer            |  7  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | IndividualDealer          |  8  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+
 Note: For dealers in QC, the validity of this provided party type depends on the form type being used.
 
 #### Document Result Type
