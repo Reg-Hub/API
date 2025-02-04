@@ -125,7 +125,7 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | String Value                                | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
 | ------------------------------------------- | --- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | MotorVehicle                                |  1  | X  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
-| Trailer                                     |  2  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  | X  |
+| Trailer                                     |  2  | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
 | Boat                                        |  3  | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
 | MobileHome                                  |  4  | X  |    | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
 | OutboardMotor                               |  5  | X  | X  | X  | X  |    |    | X  | X  | X  | X  | X  | X  | X  |
