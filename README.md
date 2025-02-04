@@ -142,7 +142,7 @@ Not all fields in the searchParameters field will be used in all jurisdictions. 
 | PassengerVehicle                            | 16  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | EmergencyVehicle                            | 17  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | CommercialVehicle                           | 18  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
-| Other                                       | 19  |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| Other                                       | 19  |    |    |    | X  |    |    |    |    |    |    |    |    |    |
 | AircraftCanada                              | 20  | X  |    |    |    |    |    |    |    |    |    |    |    |    |
 | AircraftForeign                             | 21  | X  |    |    |    |    |    |    |    |    |    |    |    |    |
 | AircraftAirframeRegisteredInCanada          | 22  |    | X  |    |    |    |    |    |    |    |    |    |    |    |
