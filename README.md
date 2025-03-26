@@ -20,7 +20,7 @@ Prepare your request: To authenticate, you will need to send a request to the Re
 
 Body Parameters:
 * grant_type: "password" (This specifies the type of grant you are requesting.)
-* scope: "opened RegHubAPI" (This specifies the permissions your access token will have.)
+* scope: "openid RegHubAPI" (This specifies the permissions your access token will have.)
 * username: Your Reg Hub account username.
 * password: Your Reg Hub account password.
 * client_id: The client ID provided to you by Reg Hub.
