@@ -24,3 +24,31 @@ At this point, you must perform decisioning on whether or not to continue based 
 - Retrieve the business report parsed results at the /Results/ParsedResults endpoint.
 
 It's worth noting that if you are very confident the entity exists and you already have the number for it, it is possible to skip the first (business search) workflow and go straight to the second (business report) workflow. However, it is recommended that you perform both workflows to avoid incurring costs on the second workflow in the case of mistaken numbers.
+
+## Business Search Details
+
+A typical request to create a business search order would look like this:
+
+```
+{
+  "referenceNumber": "your_reference_number",
+  "jurisdiction": "_M",
+  "country": "CA",
+  "businessSearchCriteria": {
+    "businessSearchCriteriaTypeID": "Name",
+    "name": "your_criteria"
+    "number": null
+  },
+  "searchParameters": {
+    "searchJurisdictions": [
+      "BC", "AB", "SK", "MB", "ON"
+    ]
+  }
+}
+```
+
+You may search by either name or number. The possible values for the field businessSearchCriteriaTypeID are as follows:
+
+|----------------|
+| Name |
+| Number |
