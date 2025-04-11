@@ -27,7 +27,7 @@ It's worth noting that if you are very confident the entity exists and you alrea
 
 ## Business Search Details
 
-A typical request to create a business search order would look like this:
+A typical request to create a business search order would look like the following:
 
 ```
 {
@@ -36,8 +36,8 @@ A typical request to create a business search order would look like this:
   "country": "CA",
   "businessSearchCriteria": {
     "businessSearchCriteriaTypeID": "Name",
-    "name": "your_criteria"
-    "number": null
+    "name": "business_name_criteria_as_a_string",
+    "number": "business_number_criteria_as_a_string"
   },
   "searchParameters": {
     "searchJurisdictions": [
@@ -70,3 +70,21 @@ The possible values for the searchJurisdictions field are as follows (and may be
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
 | _F | Federal |
+
+## Business Reports
+
+A typical request to create a business report order would look like the following:
+
+```
+{
+  "referenceNumber": "string",
+  "jurisdiction": "NB",
+  "country": "CA",
+  "businessReportCriteria": {
+    "number": "business_number_criteria_as_a_string",
+    "businessName": "business_name_criteria_as_a_string"
+  }
+}
+```
+
+The search is performed by the number in every jurisdiction _except_ PE, which requires both name and number. For ease of integration purposes, you may pass both name and number for every jurisdiction and for jurisdictions outside of PE, the name will be ignored.
