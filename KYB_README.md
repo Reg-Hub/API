@@ -15,7 +15,7 @@ A typical workflow would look like the following (each step is one or more API c
 - Wait and poll for the business search order to be in status "Complete" (these orders will take less than 10 seconds to complete the vast majority of the time).
 - Retrieve the business search results at the /Results endpoint.
 
-At this point, you must perform decisioning on whether or not to continue based on the results returned. If you are continuing, the business report endpoint would look like the following:
+At this point, you must perform decisioning on whether or not to continue based on the results returned. If you are continuing, the business report workflow would look like the following:
 
 - Create a business report order with the number you wish to get a profile for via the POST endpoint
 - Submit the created business report order via the /Submit endpoint
