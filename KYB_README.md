@@ -71,6 +71,18 @@ The possible values for the searchJurisdictions field are as follows (and may be
 | PE | Prince Edward Island |
 | _F | Federal |
 
+## Notes on Business Search Results Scoring
+
+Business Search results are scored based on proximity of the result to the search criteria.  The score is a measurement of how many changes to the string are required to make the result match the criteria exactly (after some cleaning).  The search is completed with the criteria as provided, but for scoring results we clean both the search criteria and the result prior to scoring. Here are some examples of cleaning that will happen on both the search criteria and result:
+
+- Remove all punctuation and special characters (@, ?, !, <, >, etc.)
+- Remove all legal endings from business name (LTD, LLC, CO, etc.)
+- Replace any accented characters with non-accented versions
+
+Additionally, we add partial scores to entity which are no longer active or are registered extra-provincially. This is so that in the case of multiple results, active registrations in their home jurisdiction will be scored better.
+
+If the search criteria (business name) is an exact character-for-character match of the result, you can expect a score of < 1. (0 if it's also active and registered in that jurisdiction). (edited
+
 ## Business Reports
 
 A typical request to create a business report order would look like the following:
