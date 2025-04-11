@@ -1,11 +1,11 @@
 {
 	"info": {
-		"_postman_id": "61e9c9bf-a14f-4cce-96d5-93d7dcfa567e",
+		"_postman_id": "019829a8-addb-4655-8f95-c404da40fa72",
 		"name": "RegHubPublic",
 		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Tests\" tab**\n\nTests help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/b5f280a7-4b09-48ec-857f-0a7ed99d7ef8/U2NyZWVuc2hvdCAyMDIzLTAzLTI3IGF0IDkuNDcuMjggUE0ucG5n\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) in \"Tests\" to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "29688167",
-		"_collection_link": "https://reghub.postman.co/workspace/RegHub-Workspace~16539664-d760-4c87-b931-b17ae6fd64ef/collection/29688167-61e9c9bf-a14f-4cce-96d5-93d7dcfa567e?action=share&source=collection_link&creator=29688167"
+		"_exporter_id": "30538023",
+		"_collection_link": "https://reghub.postman.co/workspace/RegHub-Workspace~16539664-d760-4c87-b931-b17ae6fd64ef/collection/30538023-019829a8-addb-4655-8f95-c404da40fa72?action=share&source=collection_link&creator=30538023"
 	},
 	"item": [
 		{
@@ -390,7 +390,10 @@
 							"name": "Get Asset Search Parsed Results",
 							"request": {
 								"method": "GET",
-								"header": []
+								"header": [],
+								"url": {
+									"raw": ""
+								}
 							},
 							"response": []
 						}
@@ -668,7 +671,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://api.uat.reghub.ca/api/v1/Orders/AssetSearches/{{orderId}}/Results",
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/DebtorSearches/{{orderId}}/Results",
 									"protocol": "https",
 									"host": [
 										"api",
@@ -773,6 +776,478 @@
 										"v1",
 										"Orders",
 										"DebtorSearches",
+										"{{orderId}}",
+										"Results",
+										"ParsedResults"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Business Search",
+					"item": [
+						{
+							"name": "Create Business Search Order",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// set order ID as variable orderId\r",
+											"const responseJson = pm.response.json();\r",
+											"    pm.collectionVariables.set(\"orderId\", responseJson.resource.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"referenceNumber\": \"test_business_search\",\r\n  \"jurisdiction\": \"_M\",\r\n  \"country\": \"CA\",\r\n  \"businessSearchCriteria\": {\r\n    \"businessSearchCriteriaTypeID\": \"Name\", // Or Number\r\n    \"name\": \"criteria\",\r\n    \"number\": \"criteria\"\r\n  },\r\n  \"searchParameters\": {\r\n    \"searchJurisdictions\": [\r\n      \"BC\", \"AB\", \"SK\", \"MB\", \"ON\", \"QC\", \"YT\", \"NT\", \"NU\", \"NL\", \"NB\", \"NS\", \"PE\", \"_F\"\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Business Search Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"referenceNumber\": \"test_reference\",\r\n  \"jurisdiction\": \"_M\",\r\n  \"country\": \"CA\",\r\n  \"businessSearchCriteria\": {\r\n    \"businessSearchCriteriaTypeID\": \"Name\",\r\n    \"name\": \"string\",\r\n    \"number\": \"string\"\r\n  },\r\n  \"searchParameters\": {\r\n    \"searchJurisdictions\": [\r\n      \"BC\", \"AB\", \"SK\", \"MB\", \"ON\", \"QC\", \"YT\", \"NT\", \"NU\", \"NL\", \"NB\", \"NS\", \"PE\", \"_F\"\r\n    ]\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch Business Search Order",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"newReferenceNumber\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Business Search Order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business Search Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Submit Business Search Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}/Submit",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}",
+										"Submit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business Search Order Results",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessSearches/{{orderId}}/Results",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessSearches",
+										"{{orderId}}",
+										"Results"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Business Report",
+					"item": [
+						{
+							"name": "Create Business Report Order",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// set order ID as variable orderId\r",
+											"const responseJson = pm.response.json();\r",
+											"    pm.collectionVariables.set(\"orderId\", responseJson.resource.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"referenceNumber\": \"test_business_report\",\r\n  \"jurisdiction\": \"QC\",\r\n  \"country\": \"CA\",\r\n  \"businessReportCriteria\": {\r\n    \"number\": \"number_criteria\",\r\n    \"businessName\": \"name_criteria\" //Only relevant in PE, but may be passed in any case\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Business Report Order",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"referenceNumber\": \"test_business_report\",\r\n  \"jurisdiction\": \"QC\",\r\n  \"country\": \"CA\",\r\n  \"businessReportCriteria\": {\r\n    \"number\": \"number_criteria\",\r\n    \"businessName\": \"name_criteria\" //Only relevant in PE, but may be passed in any case\r\n  }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Patch Business Report Order",
+							"request": {
+								"method": "PATCH",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"referenceNumber\",\r\n        \"value\": \"newReferenceNumber\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Business Report Order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business Report Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Submit Business Report Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}/Submit",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}",
+										"Submit"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business Report Order Document",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}/Results/Document",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
+										"{{orderId}}",
+										"Results",
+										"Document"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Business Report Order Parsed Results",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "https://api.uat.reghub.ca/api/v1/Orders/BusinessReports/{{orderId}}/Results/ParsedResults",
+									"protocol": "https",
+									"host": [
+										"api",
+										"uat",
+										"reghub",
+										"ca"
+									],
+									"path": [
+										"api",
+										"v1",
+										"Orders",
+										"BusinessReports",
 										"{{orderId}}",
 										"Results",
 										"ParsedResults"
