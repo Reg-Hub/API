@@ -49,7 +49,7 @@ With a request body in the format
 }
 ```
 
-This call will almost always return 201 Created with a representation of the created order. It will sometimes return 400 BadRequest if a breaking field was not supplied (eg. orderTypeID).
+This call will almost always return 201 Created with a representation of the created order. It will sometimes return 400 BadRequest if a breaking field was not supplied (eg. orderTypeID). However even if it did return 201, the order still may be in an invalid state. Dealing with validation issues is discussed below.
 
 Note that the above is for a Canada wide asset search. You can supply one or more jurisdiction. Note that the order will still work if you supply only one jurisdiction, though there are no benefits to submitting an asset multi search order if you are searching one jurisdiction and may as well use the regular asset search.
 
