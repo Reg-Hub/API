@@ -103,7 +103,7 @@ Once you have a fully valid asset multi search order, you can simply submit usin
 PUT {root}/api/v1/Orders/AssetMultiSearches/{parentOrderID}
 ```
 
-This will return, if successful, a 204 NoContent response with no response body (as with all other RegHub order flows). From here, you can either poll or use the callback strategy (fairly new as of June 2025, please ask for more information on integrating with this) to be alerted to when your order is complete. If you are using the polling strategy, we recommend the endpoint
+If successful, it will return a 204 NoContent response with no response body (as with all other RegHub order flows). From here, you can either poll or use the callback strategy (fairly new as of June 2025, please ask for more information on integrating with this) to be alerted to when your order is complete. If you are using the polling strategy, we recommend the endpoint
 
 ```
 GET {root}/api/v1/Orders/{parentOrderID}/Status
