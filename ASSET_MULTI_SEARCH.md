@@ -8,6 +8,8 @@ The parent order will complete when and only when all the child have been comple
 
 ## Workflow
 
+The flow is largely the same as other orders sent to RegHub APIs. Create your draft, submit the order, then wait for results. However because the parent order creates multiple child orders, there are some potential extra complications in validation and results retreival.
+
 Begin by sending a POST request to the endpoint:
 
 ```
@@ -18,7 +20,7 @@ with a request body in the format:
 
 ```
 {
-  "referenceNumber": "tiyr reference number here",
+  "referenceNumber": "your reference number here",
   "orderTypeID": "AssetMultiSearch",
   "assets": [
     {
@@ -46,3 +48,41 @@ with a request body in the format:
 ```
 
 Note that the above is for a Canada wide asset search. You can supply one or more jurisdiction. Note that the order will still work if you supply only one jurisdiction, though there are no benefits to submitting an asset multi search order if you are searching one jurisdiction and may as well use the regular asset search.
+
+If there are validation issues with **any** of the child orders, you will receive a single validation error or a single validation warning on the parent order like the following:
+
+```
+"errors": [
+    {
+        "path": "",
+        "message": "All orders in the OrderGroup must be valid.",
+        "userFriendlyMessage": "All orders in the group must be valid.",
+        "entityID": "d999d048-7b50-4826-7c99-08ddb00b475e",
+        "showForClient": true
+    }
+]
+```
+
+As with the normal order flow, you will not be allowed to submit the parent order until all the validation errors are cleared, which would mean clearing validation errors on the child orders. It's worth noting that on asset multi searches the list of possible validation errors on a child order is quite short, and will be mostly either that a serial number has not been supplied at all or that the serial number contains invalid characters for a particular jurisdiction. To find out what the validation errors are for the individual orders, you can perform a request in the following basic format:
+
+```
+GET https://api.uat.reghub.ca/api/v1/Orders?orderGroupID={orderGroupID}&pageSize=100
+Accept: application/vnd.reghub.order-with-validation+json
+Authorization: Bearer {token}
+```
+
+This call will return a paginated resource of all the orders in the group (including the parent order). Note that the default page size is 10, so we suggest hardcoding the pageSize query parameter to 100 to ensure that all the orders in the group are always returned. The order group ID can be found on the parent order at the path /orderGroup/ID. Note the accept header value. This content type will include orders with their validation issues in the following format:
+
+```
+[
+  {
+    "resource": {
+      //order representation here in the normal format
+    },
+    "validation: {
+      //validation information here in the normal format
+    }
+  },
+  ...
+]
+```
