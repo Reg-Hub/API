@@ -4,7 +4,7 @@ The following is an integration guide for asset multi searches. This service all
 
 The 'parent' asset multi search order will only be referred to as the parent order from this point on in the documentation, and the 'child' orders will only be referred to as a child or the children from this point on.
 
-The parent order will complete when and only when all the child have been completed. Each child will have all the normal information at all the normal endpoints (summary, registry document, parsed results), but the parent multi will have an aggregated summary containing high level information about results found in each jurisdiction searched, as well as all the registry documents combined into one pdf. The parent, at the tiem of this writing (2025/06/20) does not supply aggregated parsed results but this is on our roadmap. The parent order does not come with a fee associated with it at the time of this writing (2025/06/20) but each child order will have the regular fees attached.
+The parent order will complete when and only when all the child orders have been completed. Each child will have all the normal information at all the normal endpoints (summary, registry document, parsed results), but the parent multi will have an aggregated summary containing high level information about results found in each jurisdiction searched, as well as all the registry documents combined into one pdf. The parent, at the tiem of this writing (2025/06/20) does not supply aggregated parsed results but this is on our roadmap. The parent order does not come with a fee associated with it at the time of this writing (2025/06/20) but each child order will have the regular fees attached.
 
 A quick note about turnaround times. These can vary wildly from 1-2 mins in very good cases to a business day or two in extreme cases. This will depend on search criteria and jurisdiction. The main problem jurisdiction is Ontario - if the search yields a high number of results they require a different search flow that can take up to two days to complete. If this is the case, the order will go into the status AwaitingHighVolumeResults. It's also worth noting that this can also occur in British Columbia, but in those cases the order is usually turned around in less than 30 minutes.
 
@@ -70,7 +70,6 @@ As with the normal order flow, you will not be allowed to submit the parent orde
 ```
 GET {root}/api/v1/Orders?orderGroupID={orderGroupID}&pageSize=100
 Accept: application/vnd.reghub.order-with-validation+json
-Authorization: Bearer {token}
 ```
 
 This call will return a paginated resource of all the orders in the group (including the parent order). **Note that the default page size is 10**, so we suggest hardcoding the pageSize query parameter to 100 to ensure that all the orders in the group are always returned. The order group ID can be found on the parent order at the path /orderGroup/ID. **Note the accept header value.** This content type will include orders with their validation issues in the following format:
@@ -120,4 +119,38 @@ When the status endpoint returns the above response body, this means that the pa
 
 ## Results Retreival
 
-Once you know the parent order is completed,
+Once you know the parent order is completed, there will be multiple documents available both on the parent order and on each child order. There is an aggregated summary available on the parent order at the endpoint (note: only available in pdf at this time)
+
+```
+GET {root}/api/v1/Orders/AssetMultiSearches/{parentOrderID}/Summary
+Accept: application/pdf
+```
+
+There is an aggregated registry document (just all the registry documents combined into one PDF) at the endpoint
+
+```
+GET {root}/api/v1/Orders/AssetMultiSearches/{parentOrderID}/Document
+Accept: application/pdf
+```
+
+Individual summaries for each child order are available in both json and pdf form
+
+```
+GET {root}/api/v1/Orders/AssetSearches/{childOrderID}/Summary
+Accept: application/json
+Accept: application/pdf
+```
+
+Individual registry results for each child order are available in both json and pdf form
+
+```
+GET {root}/api/v1/Orders/AssetSearches/{childOrderID}/Document
+Accept: application/json
+Accept: application/pdf
+```
+
+Note that the result of calling the above endpoint with the accept header set to application/json is the same as calling the below endpoint
+
+```
+GET {root}/api/v1/Orders/AssetSearches/{childOrderID}/Results/ParsedResults
+```
