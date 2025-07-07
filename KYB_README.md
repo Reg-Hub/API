@@ -20,8 +20,13 @@ At this point, you must perform decisioning on whether or not to continue based 
 - Create a business report order with the number you wish to get a profile for via the POST endpoint
 - Submit the created business report order via the /Submit endpoint
 - Wait and poll for the business report order to be in status "Complete" (the average completion time for these orders can vary from a few seconds to 2 minutes).
-- Retrieve the business report results document at the /Results/Document endpoint.
-- Retrieve the business report parsed results at the /Results/ParsedResults endpoint.
+- Retrieve the business report results document at the /Document endpoint.
+  - Set the "Accept" header to "application/json" for the JSON representation.
+  - Set the "Accept" header to "application/pdf" for the PDF representation.
+  - JSON and PDF are the only two formats available at the time of this writing (2025-07-07).
+- Retreive the RegHub standardized business report at the /StandardizedDocument endpoint.
+  - Set the "Accept" header to "application/pdf" for the PDF representation.
+  - PDF is the only format available at the time of this writing (2025-07-07). The JSON format would be essentially the same as the /Document endpoint so you may just use that endpoint if you require the JSON representation.
 
 It's worth noting that if you are very confident the entity exists and you already have the number for it, it is possible to skip the first (business search) workflow and go straight to the second (business report) workflow. However, it is recommended that you perform both workflows to avoid incurring costs on the second workflow in the case of mistaken numbers.
 
