@@ -234,4 +234,5 @@
 | PE | 1 - 5 min | N/A |
 
 \*Provided that the order is submitted inside Ontario business hours.
+
 †Processing time in Quebec can vary wildly due to the registry's rules. Extreme cases can be over a week (usually around holidays), but during normal times orders usually complete in around 1 day.
