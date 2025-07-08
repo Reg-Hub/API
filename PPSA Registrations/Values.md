@@ -17,7 +17,7 @@
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
 
-### Lien
+### Lien Fields (Lien)
 | Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC* | SK | YT |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | term | X | X | X | X | X | X | X | X | X | X | X | X | X | 
@@ -62,7 +62,7 @@
 
 \*QC field relevance will depend on the value of qcFormTypeID. During integration you should be told by your business team/project manager what form types to be using for QC.
 
-### Repair Lien
+### Lien Fields (Repair Lien)
 | Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
 |---|---|---|---|---|---|---|---|---|
 | term | | X | | | | X | X | |
