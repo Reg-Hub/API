@@ -104,28 +104,7 @@ With a request body in the following format:
 }
 ```
 
-The following is a brief explanation of the fields:
-
-| Field | Type | Description |
-| --- | --- | --- |
-| referenceNumber | string | Can be any string - used for your internal reference only. Can be used to find an order later if you do not have the order ID. Reference numbers do not need to be unique across orders. Every order will end up getting its own unique identifier in its ID field. |
-| jurisdiction | string | Only Canadian values are supported as of July 8, 2025. [See Values.md for valid values](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/Values.md) |
-| country | string | The only valid value (as of writing on July 8, 2025) is "CA" (Canada). We currently do not support PPSA searching outside of Canada. |
-| asset | object | Contains information on the asset to be searched for asset searches. |
-| serialNumber | string | The serial number (can be a VIN or other format, for example for equipment). |
-| debtor | object | Contains information on the debtor to be searched for debtor searches. |
-| busName | string/null | Name to be searched for a business debtor. |
-| firstName | string/null | |
-| middleName | string/null | |
-| lastName | string/null | |
-| dateOfBirth | date/null | |
-| partyTypeID | number/string | This is an enumerated value. [See Values.md for valid values](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/Values.md) |
-| searchParameters | object | Contains additional search parameters. Not all fields will be available at every jurisdictional registry. |
-| exactOnlyResults | boolean | Set to true to only retreive exact matches from the registry. Some registries have a very fuzzy matching scheme and will match even wildly different entries to the criteria provided. If you find you are getting too many results back on your searches for a given jurisdiction, consider setting this to true to only retreive exact matches. |
-| searchFromDate | date/null | Available in Ontario, sets the maximum date in the past that will be included in the results. We do not recommend using this parameter unless you have a very specific use case for it. |
-| searchToDate | date/null | Available in Ontario, sets the maximum date that will be included in the results. We do not recommend using this parameter unless you have a very specific use case for it. |
-
-A successful request will have in its response a 201 Created status code, and the response body will contain an echo of the requested order with additional details (for example, unique identifiers will all be provided at this point). It's very important that you save the "id" property of the returned order as this is how you will interact with the system for this order going forward. Here is an example of a successfully requested order's response:
+Not all fields will be relevant in all jurisdictions. Please visit the values page for a table listing what fields are relevant in each jurisdiction.
 
 ```
 HTTP/1.1 201 Created
