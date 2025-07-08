@@ -46,7 +46,6 @@ With a request body in the following format:
     "other": boolean,
     "noFixedMaturityDate": boolean,
     "maturityDate": date,
-    "fileNumber": string,
     "qcFormTypeID": integer | string,
     "sumOfHypothec": string,
     "useDefaultSumOfHypothec": boolean,
