@@ -1,6 +1,6 @@
 The following is a series of tables containing valid values for fields in PPSA searching.
 
-## Jurisdiction  
+### Jurisdiction  
 | Value | Full name (not used in API, only provided here for clarity) |
 | ----- | ----------------------------------------------------------- |
 | BC | British Columbia |
@@ -16,3 +16,9 @@ The following is a series of tables containing valid values for fields in PPSA s
 | NB | New Brunswick |
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
+
+### PartyTypeID  
+| Number Value | String Value |
+| ----- | ----- |
+| 1 | BusinessDebtor |
+| 2 | IndividualDebtor |
