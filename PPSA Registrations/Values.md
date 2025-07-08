@@ -57,6 +57,5 @@
 | signingCity | | | | | | | | | | | X | | |
 | signingJurisdiction | | | | | | | | | | | X | | |
 | signingCountry | | | | | | | | | | | X | | |
-| -- |
 
-*QC field relevance will depend on the value of qcFormTypeID. During integration you should be told by your business team/project manager what form types to be using for QC.
+\*QC field relevance will depend on the value of qcFormTypeID. During integration you should be told by your business team/project manager what form types to be using for QC.
