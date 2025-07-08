@@ -9,8 +9,7 @@ A quick note about turnaround times. These can vary wildly from 1-2 mins in very
 The general steps are as follows:
 1. Create a draft for review
 2. Correct any validation issues
-3. Submit the order
-4. Wait for results
-5. Retreive results
+3. Submit the order and wait for results
+4. Retreive results
 
 The following sections will go into more depth on each of these steps.
