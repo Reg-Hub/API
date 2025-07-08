@@ -19,9 +19,9 @@
 
 # Field Relevance
 ### Lien
-| Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| term | X | | | | | | | | | | | | |
+| Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT | Notes |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---| --- |
+| term | X | | | | | | | | | | | | | testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note|
 | isInfiniteTerm | | | | | | | | | | | | | |
 | expiryDate | | | | | | | | | | | |
 | amount | | | | | | | | | | | | | |
