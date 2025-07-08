@@ -1,6 +1,6 @@
-# Valid Values
-### Jurisdiction
+# Values
 
+### Jurisdiction
 | Value | Full name (not used in API, only provided here for clarity) |
 | ----- | ----------------------------------------------------------- |
 | BC | British Columbia |
@@ -17,7 +17,6 @@
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
 
-# Field Relevance
 ### Lien
 | Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC* | SK | YT |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
