@@ -1,6 +1,6 @@
 ## 1. Correct Any Validation Issues
 
-We begin with a _similar_ response to that we received when we created our draft in [Section 1: Create A Draft For Review](). However, in this case, we see there are some validation issues.
+We begin with a _similar_ response to that we received when we created our draft in [Section 1: Create A Draft For Review](). However, in this case, we see there are some validation issues (Again, some irrelevant fields and headers have been ommitted from the example).
 
 ```
 HTTP/1.1 201 Created
@@ -9,139 +9,51 @@ Location: {root}/api/v1/Orders/2126f1c2-378e-4fda-f1f6-08ddbd9f205b
 
 {
     "resource": {
-        "id": "2126f1c2-378e-4fda-f1f6-08ddbd9f205b",
-        "jurisdiction": "QC",
+        "id": "aadc276b-ed64-484b-f1fc-08ddbd9f205b",
+        "jurisdiction": "BC",
         "country": "CA",
         "orderTypeID": "DebtorSearch",
         "orderStatusTypeID": "Draft",
         "searchParameters": {
-            "id": "54e4a839-37d2-48b7-48d2-08ddbd9f205d",
+            "id": "be517518-de7a-4f5d-48d7-08ddbd9f205d",
             "exactOnlyResults": false,
             "searchFromDate": null,
-            "isChildSearch": false
+            "searchToDate": null,
         },
         "parties": [
             {
-                "partyTypeID": "BusinessDebtor",
-                "busName": "Business Name To Search",
+                "id": "6b8c9eea-afe3-4291-c350-08ddbda07d50",
+                "partyTypeID": "IndividualDebtor",
+                "busName": "3235149 Canada Inc",
                 "firstName": null,
                 "middleName": null,
                 "lastName": null,
                 "dateOfBirth": null
             }
         ],
-        "referenceNumber": "Reference number for test"
+        "referenceNumber": "test"
     },
     "validation": {
-        "errors": [],
-        "warnings": [],
-        "notices": []
-    }
-}
-```
-
-With a request body in the format for asset searches:
-
-```
-{
-  "referenceNumber": string,
-  "jurisdiction": string,
-  "country": string,
-  "asset": {
-    "serialNumber": string
-  },
-  "searchParameters": {
-    "exactOnlyResults": boolean
-  }
-```
-
-Or in the format for debtor searches:
-
-```
-{
-    "referenceNumber": string,
-    "jurisdiction": string,
-    "country": string,
-    "debtor":
-        {
-            "busName": string,
-            "firstName": string,
-            "middleName": string,
-            "lastName": string,
-            'dateOfBirth": date,
-            "partyTypeID": number | string
-        },
-    "searchParameters": {
-      "exactOnlyResults": boolean,
-      "searchFromDate": date,
-      "searchToDate": date
-    }
-}
-```
-
-The following is a brief explanation of the fields:
-
-| Field | Type | Description |
-| --- | --- | --- |
-| referenceNumber | string | Can be any string - used for your internal reference only. Can be used to find an order later if you do not have the order ID. Reference numbers do not need to be unique across orders. Every order will end up getting its own unique identifier in its ID field. |
-| jurisdiction | string | Only Canadian values are supported as of July 8, 2025. [See Values.md for valid values](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/Values.md) |
-| country | string | The only valid value (as of writing on July 8, 2025) is "CA" (Canada). We currently do not support PPSA searching outside of Canada. |
-| asset | object | Contains information on the asset to be searched for asset searches. |
-| serialNumber | string | The serial number (can be a VIN or other format, for example for equipment). |
-| debtor | object | Contains information on the debtor to be searched for debtor searches. |
-| busName | string/null | Name to be searched for a business debtor. |
-| firstName | string/null | |
-| middleName | string/null | |
-| lastName | string/null | |
-| dateOfBirth | date/null | |
-| partyTypeID | number/string | This is an enumerated value. [See Values.md for valid values](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/Values.md) |
-| searchParameters | object | Contains additional search parameters. Not all fields will be available at every jurisdictional registry. |
-| exactOnlyResults | boolean | Set to true to only retreive exact matches from the registry. Some registries have a very fuzzy matching scheme and will match even wildly different entries to the criteria provided. If you find you are getting too many results back on your searches for a given jurisdiction, consider setting this to true to only retreive exact matches. |
-| searchFromDate | date/null | Available in Ontario, sets the maximum date in the past that will be included in the results. We do not recommend using this parameter unless you have a very specific use case for it. |
-| searchToDate | date/null | Available in Ontario, sets the maximum date that will be included in the results. We do not recommend using this parameter unless you have a very specific use case for it. |
-
-A successful request will have in its response a 201 Created status code, and the response body will contain an echo of the requested order with additional details (for example, unique identifiers will all be provided at this point). It's very important that you save the "id" property of the returned order as this is how you will interact with the system for this order going forward. Here is an example of a successfully requested order's response:
-
-```
-HTTP/1.1 201 Created
-Content-Type: application/json; charset=utf-8
-Location: https://api.reghub.dev/api/v1/Orders/2126f1c2-378e-4fda-f1f6-08ddbd9f205b
-
-{
-    "resource": {
-        "id": "2126f1c2-378e-4fda-f1f6-08ddbd9f205b",
-        "jurisdiction": "QC",
-        "country": "CA",
-        "orderTypeID": "DebtorSearch",
-        "orderStatusTypeID": "Draft",
-        "searchParameters": {
-            "id": "54e4a839-37d2-48b7-48d2-08ddbd9f205d",
-            "exactOnlyResults": false,
-            "searchFromDate": null,
-            "isChildSearch": false
-        },
-        "parties": [
+        "errors": [
             {
-                "partyTypeID": "BusinessDebtor",
-                "busName": "Business Name To Search",
-                "firstName": null,
-                "middleName": null,
-                "lastName": null,
-                "dateOfBirth": null
+                "path": "Parties/d9f99f7a-fe6c-44a0-c34f-08ddbda07d50/Name",
+                "message": "Parties of person type require both FirstName and LastName.",
+                "userFriendlyMessage": "Parties of person type require both first and last names.",
+                "entityID": "d9f99f7a-fe6c-44a0-c34f-08ddbda07d50"
+            },
+            {
+                "path": "Parties/d9f99f7a-fe6c-44a0-c34f-08ddbda07d50/BusName",
+                "message": "Parties of Individual types may not have BusName field supplied.",
+                "userFriendlyMessage": "Individual parties may not have a business name.",
+                "entityID": "d9f99f7a-fe6c-44a0-c34f-08ddbda07d50"
             }
         ],
-        "referenceNumber": "Reference number for test"
-    },
-    "validation": {
-        "errors": [],
         "warnings": [],
         "notices": []
     }
 }
 ```
 
-Note that not all headers in the response have been provided in the above example as most are irrelevant. Also note that some fields from the response body have been ommitted as they are irrelevant for the purposes of this guide.
+Note the pressence of items in the "errors" array in the "validation" object.
 
-Note that the "validations" section contains multiple empty arrays. Validation will be handled in the following section 2.
-
-Once you have created your draft, it is ready for review and submission.
+Orders will not be allowed to be submitted with errors present. Errors _must_ be rectified before submission as the registry will not accept invalid criteria or fields. 
