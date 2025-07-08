@@ -106,7 +106,7 @@
 | signingJurisdiction | | | | | | | | |
 | signingCountry | | | | | | | | |
 
-#### AssetTypeID (Lien)
+### AssetTypeID (Lien)
 | String Value                                | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
 | ------------------------------------------- | --- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | MotorVehicle                                |  1  | X  | X  | X  | X  | X  |    | X  | X  | X  | X  | X  | X  | X  |
@@ -138,7 +138,7 @@
 | TrailerOrSemiTrailer                        | 27  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | MotorHome                                   | 28  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 
-#### AssetTypeID (RepairLien)
+### AssetTypeID (RepairLien)
 | String Value                                | ID  | AB | BC | SK | MB | ON | YT | NT | NU |
 | ------------------------------------------- | --- | -- | -- | -- | -- | -- | -- | -- | -- |
 | MotorVehicle                                |  1  | X  | X  | X  | X  | X  | X  | X  | X  |
@@ -181,3 +181,38 @@
 | IndividualRegisteringAgent |  6  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
 | BusinessDealer             |  7  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | IndividualDealer           |  8  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
+
+### GenerationID 
+| String Value | ID |
+|--------------|----|
+| Jr           | 1  |
+| Sr           | 2  |
+| Esquire      | 3  |
+| TheFirst     | 4  |
+| TheSecond    | 5  |
+| TheThird     | 6  |
+| TheFourth    | 7  |
+| TheFifth     | 8  |
+| TheSixth     | 9  |
+| TheElder     | 10 |
+| TheYounger   | 11 |
+
+### QCFormTypeID
+| String Value | ID |
+|--------------|----|
+| RHa          | 1  |
+| RDd          | 2  |
+| RDe          | 3  |
+| RG34         | 4  |
+| RG41         | 5  |
+| RV           | 6  |
+| RRa          | 7  |
+| RHf          | 8  |
+| RDf          | 9  |
+| RG80         | 10 |
+| RE           | 11 |
+| RDc          | 12 |
+| RDb          | 13 |
+| RG14         | 14 |
+| RDa          | 15 |
+| RG13         | 16 |
