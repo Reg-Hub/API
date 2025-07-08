@@ -39,7 +39,7 @@ The following is a series of tables containing valid values for fields in PPSA s
 | NB | 30s - 5min |
 | NS | 30s - 5min |
 | PE | 30s - 5min |
-/* If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results.
+| * If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results. |
 
 ### Typical Asset Search Order Completion Times  
 | Jurisdiction | Time |
@@ -57,4 +57,4 @@ The following is a series of tables containing valid values for fields in PPSA s
 | NB | 30s - 5min |
 | NS | 30s - 5min |
 | PE | 30s - 5min |
-/* If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results.
+| * If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results. |
