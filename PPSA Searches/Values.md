@@ -40,4 +40,4 @@ The following is a series of tables containing valid values or additional inform
 | NB | 30 s – 5 min | 30 s – 5 min |
 | NS | 30 s – 5 min | 30 s – 5 min |
 | PE | 30 s – 5 min | 30 s – 5 min |
-\* If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results.
+\*If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results.
