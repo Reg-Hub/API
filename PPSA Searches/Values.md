@@ -24,7 +24,7 @@ The following is a series of tables containing valid values or additional inform
 | 1 | BusinessDebtor |
 | 2 | IndividualDebtor |
 
-#Completion Times
+# Completion Times
 ### Typical Debtor Search Order Completion Times  
 | Jurisdiction | Time |
 | ----- | ----- |
