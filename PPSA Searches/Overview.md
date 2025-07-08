@@ -7,7 +7,7 @@ A quick note about turnaround times. These can vary wildly from 1-2 mins in very
 ## Performing the Search
 
 The general steps are as follows:
-1. Create a draft for review
+1. [Create a draft for review](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/1.%20Create%20a%20Draft%20for%20Review.md)
 2. Correct any validation issues
 3. Submit the order and wait for results
 4. Retreive results
