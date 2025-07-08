@@ -25,38 +25,19 @@ The following is a series of tables containing valid values or additional inform
 | 2 | IndividualDebtor |
 
 # Completion Times
-### Typical Debtor Search Order Completion Times  
-| Jurisdiction | Time |
-| ----- | ----- |
-| BC | 10s - 30min* |
-| AB | 2 - 5min |
-| SK | 2 - 5min |
-| MB | 2 - 5min |
-| ON | 2min - 2 business days* |
-| QC | 2 - 5min |
-| YT | 30s - 5min |
-| NT | 30s - 5min |
-| NU | 30s - 5min |
-| NL | 30s - 5min |
-| NB | 30s - 5min |
-| NS | 30s - 5min |
-| PE | 30s - 5min |
-| | * If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results. |
-
-### Typical Asset Search Order Completion Times  
-| Jurisdiction | Time |
-| ----- | ----- |
-| BC | 10s - 30min* |
-| AB | 2 - 5min |
-| SK | 2 - 5min |
-| MB | 2 - 5min |
-| ON | 2min - 2 business days* |
-| QC | 2 - 5min |
-| YT | 30s - 5min |
-| NT | 30s - 5min |
-| NU | 30s - 5min |
-| NL | 30s - 5min |
-| NB | 30s - 5min |
-| NS | 30s - 5min |
-| PE | 30s - 5min |
+| Jurisdiction | Debtor Search Time | Asset Search Time |
+|--------------|-------------------|-------------------|
+| BC | 10 s – 30 min* | 10 s – 30 min* |
+| AB | 2 – 5 min | 2 – 5 min |
+| SK | 2 – 5 min | 2 – 5 min |
+| MB | 2 – 5 min | 2 – 5 min |
+| ON | 2 min – 2 business days* | 2 min – 2 business days* |
+| QC | 2 – 5 min | 2 – 5 min |
+| YT | 30 s – 5 min | 30 s – 5 min |
+| NT | 30 s – 5 min | 30 s – 5 min |
+| NU | 30 s – 5 min | 30 s – 5 min |
+| NL | 30 s – 5 min | 30 s – 5 min |
+| NB | 30 s – 5 min | 30 s – 5 min |
+| NS | 30 s – 5 min | 30 s – 5 min |
+| PE | 30 s – 5 min | 30 s – 5 min |
 | | * If a search has an irregularly large number of results these jurisdictions treat them differently and take much longer to provide results. |
