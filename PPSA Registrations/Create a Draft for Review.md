@@ -17,6 +17,7 @@ With a request body in the following format:
   "lien": {
     "term": integer,
     "isInfiniteTerm": boolean,
+    "expiryDate": date,
     "amount": decimal,
     "additionalInformation": string,
     "generalCollateral": {
