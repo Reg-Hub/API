@@ -1,4 +1,4 @@
-The following is a series of tables containing valid values for fields in PPSA searching.
+The following is a series of tables containing valid values or additional information for PPSA searching:
 
 ### Jurisdiction  
 | Value | Full name (not used in API, only provided here for clarity) |
