@@ -36,6 +36,7 @@
 | courtOrder | X | | | | | | | | | | | | |
 | surrenderDate | | | | | | | | | | | | | |
 | serviceLastRendered | | | | | | | | | | | | | |
+| dateOfLien | | | | | | | | | | | | | |
 | systemGeneratedRIN | | | | | | | | | | | | X | |
 | rin | | | | | | | | | | | | | X |
 | noRIN | | | | | | | | | | | | X | |
@@ -65,41 +66,42 @@
 ### Repair Lien
 | Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
 |---|---|---|---|---|---|---|---|
-| term | | X | |
-| isInfiniteTerm | | X | |
-| expiryDate | | | |
-| amount | | | |
-| additionalInformation | X | | |
-| generalCollateral.collateralValue | | X | |
-| trustIndenture | | | |
-| stillHavePossession | X | | X |
-| vehicleReleasedDate | X | | |
-| workLastCompletedDate | X | | |
-| partsProvidedDate | X | | |
-| otherChanges | X | | |
-| courtOrder | X | | |
-| surrenderDate | | | X |
-| serviceLastRendered | | | X |
-| systemGeneratedRIN | | | |
-| rin | | | |
-| noRIN | | | |
-| perfectionInAnotherJurisdiction | | | |
-| purchaseMoneySecurityInterest | | | |
-| receiverAppointment | | | |
-| securityInterest | | | |
-| mvIncluded | | | |
-| cautionFiling | | | |
-| consumerGoods | | | |
-| inventory | | | |
-| equipment | | | |
-| accounts | | | |
-| other | | | |
-| noFixedMaturityDate | | | |
-| maturityDate | | | |
-| qcFormTypeID | | | |
-| sumOfHypothec | | | |
-| useDefaultSumOfHypothec | | | |
-| signingDate | | | |
-| signingCity | | | |
-| signingJurisdiction | | | |
-| signingCountry | | | |
+| term | | X | | | | X | X | |
+| isInfiniteTerm | | X | | | | | X | |
+| expiryDate | | | | | | | X | |
+| amount | | | | | | | | |
+| additionalInformation | X | | | X | X | | | X |
+| generalCollateral.collateralValue | | X | | | | X | X | |
+| trustIndenture | | | | | | | | |
+| stillHavePossession | X | | X | | | | | |
+| vehicleReleasedDate | X | | | | | | | |
+| workLastCompletedDate | X | | | | | | | |
+| partsProvidedDate | X | | | | | | | |
+| otherChanges | X | | | | | | | |
+| courtOrder | X | | | | | | | |
+| surrenderDate | | | X | | | | | |
+| serviceLastRendered | | | X | | | | | |
+| dateOfLien | | | | X | X | | | X |
+| systemGeneratedRIN | | | | | | | X | |
+| rin | | | | | | | X | |
+| noRIN | | | | | | | | |
+| perfectionInAnotherJurisdiction | | | | | | | | |
+| purchaseMoneySecurityInterest | | | | | | | | |
+| receiverAppointment | | | | | | | | |
+| securityInterest | | | | | | | | |
+| mvIncluded | | | | | | X | | |
+| cautionFiling | | | | | | | | |
+| consumerGoods | | | | | | | | |
+| inventory | | | | | | | | |
+| equipment | | | | | | | | |
+| accounts | | | | | | | | |
+| other | | | | | | | | |
+| noFixedMaturityDate | | | | | | | | |
+| maturityDate | | | | | | | | |
+| qcFormTypeID | | | | | | | | |
+| sumOfHypothec | | | | | | | | |
+| useDefaultSumOfHypothec | | | | | | | | |
+| signingDate | | | | | | | | |
+| signingCity | | | | | | | | |
+| signingJurisdiction | | | | | | | | |
+| signingCountry | | | | | | | | |
