@@ -224,7 +224,7 @@
 | SK | 2 – 5 min | 2 – 5 min |
 | MB | 2 – 5 min | 2 – 5 min |
 | ON | 2 - 5 min* | 2 - 5 min* |
-| QC | 1 – ? days* | N/A |
+| QC | 1 – ? days† | N/A |
 | YT | 1 - 5 min | 1 - 5 min |
 | NT | 1 - 5 min | 1 - 5 min |
 | NU | 1 - 5 min | 1 - 5 min |
@@ -232,3 +232,6 @@
 | NB | 1 - 5 min | N/A |
 | NS | 1 - 5 min | N/A |
 | PE | 1 - 5 min | N/A |
+
+\*Provided that the order is submitted inside Ontario business hours.
+†Processing time in Quebec can vary wildly due to the registry's rules. Extreme cases can be over a week (usually around holidays), but during normal times orders usually complete in around 1 day.
