@@ -65,7 +65,7 @@
 
 ### Repair Lien
 | Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
-|---|---|---|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|---|
 | term | | X | | | | X | X | |
 | isInfiniteTerm | | X | | | | | X | |
 | expiryDate | | | | | | | X | |
