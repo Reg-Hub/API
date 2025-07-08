@@ -19,11 +19,12 @@
 
 # Field Relevance
 ### Lien
-| Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT | Notes |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---| --- |
-| term | X | | | | | | | | | | | | | testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note testing a pretty long note|
+| Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| term | X | | | | | | | | | | | | | 
 | isInfiniteTerm | | | | | | | | | | | | | |
 | expiryDate | | | | | | | | | | | |
+<tr><td colspan="14">testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing </td></tr>
 | amount | | | | | | | | | | | | | |
 | additionalInformation | | | | | | | | | | | | | |
 | generalCollateral.collateralValue | | | | | | | | | | | | | |
