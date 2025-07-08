@@ -34,6 +34,8 @@
 | partsProvidedDate | | | | | | | | | | | | | |
 | otherChanges | X | | | | | | | | | | | | |
 | courtOrder | X | | | | | | | | | | | | |
+| surrenderDate | | | | | | | | | | | | | |
+| serviceLastRendered | | | | | | | | | | | | | |
 | systemGeneratedRIN | | | | | | | | | | | | X | |
 | rin | | | | | | | | | | | | | X |
 | noRIN | | | | | | | | | | | | X | |
@@ -59,3 +61,45 @@
 | signingCountry | | | | | | | | | | | X | | |
 
 \*QC field relevance will depend on the value of qcFormTypeID. During integration you should be told by your business team/project manager what form types to be using for QC.
+
+### Repair Lien
+| Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
+|---|---|---|---|---|---|---|---|
+| term | | X | |
+| isInfiniteTerm | | X | |
+| expiryDate | | | |
+| amount | | | |
+| additionalInformation | X | | |
+| generalCollateral.collateralValue | | X | |
+| trustIndenture | | | |
+| stillHavePossession | X | | X |
+| vehicleReleasedDate | X | | |
+| workLastCompletedDate | X | | |
+| partsProvidedDate | X | | |
+| otherChanges | X | | |
+| courtOrder | X | | |
+| surrenderDate | | | X |
+| serviceLastRendered | | | X |
+| systemGeneratedRIN | | | |
+| rin | | | |
+| noRIN | | | |
+| perfectionInAnotherJurisdiction | | | |
+| purchaseMoneySecurityInterest | | | |
+| receiverAppointment | | | |
+| securityInterest | | | |
+| mvIncluded | | | |
+| cautionFiling | | | |
+| consumerGoods | | | |
+| inventory | | | |
+| equipment | | | |
+| accounts | | | |
+| other | | | |
+| noFixedMaturityDate | | | |
+| maturityDate | | | |
+| qcFormTypeID | | | |
+| sumOfHypothec | | | |
+| useDefaultSumOfHypothec | | | |
+| signingDate | | | |
+| signingCity | | | |
+| signingJurisdiction | | | |
+| signingCountry | | | |
