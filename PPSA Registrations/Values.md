@@ -21,37 +21,35 @@
 ### Lien
 | Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| term | X | | | | | | | | | | | | | 
-| isInfiniteTerm | | | | | | | | | | | | | |
-| expiryDate | | | | | | | | | | | |
-<tr><td colspan="14">testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing testing </td></tr>
+| term | X | X | X | X | X | X | X | X | X | X | | | X | 
+| isInfiniteTerm | X | X | X | X | X | X | X | X | X | X | | | X |
+| expiryDate | | | X | | | | | | | | |
 | amount | | | | | | | | | | | | | |
-| additionalInformation | | | | | | | | | | | | | |
-| generalCollateral.collateralValue | | | | | | | | | | | | | |
-| trustIndenture | | | | | | | | | | | | | |
+| additionalInformation | X | | X | X | X | X | X | X | | X | | | X |
+| generalCollateral.collateralValue | X | X | X | X | X | X | X | X | X | X | X | X | X |
+| trustIndenture | X | X | X | | | | | | | | | | |
 | stillHavePossession | | | | | | | | | | | | | |
 | vehicleReleasedDate | | | | | | | | | | | | | |
 | workLastCompletedDate | | | | | | | | | | | | | |
 | partsProvidedDate | | | | | | | | | | | | | |
-| otherChanges | | | | | | | | | | | | | |
-| courtOrder | | | | | | | | | | | | | |
+| otherChanges | X | | | | | | | | | | | | |
+| courtOrder | X | | | | | | | | | | | | |
 | systemGeneratedRIN | | | | | | | | | | | | | |
 | rin | | | | | | | | | | | | | |
 | noRIN | | | | | | | | | | | | | |
-| perfectionInAnotherJurisdiction | | | | | | | | | | | | | |
-| purchaseMoneySecurityInterest | | | | | | | | | | | | | |
-| receiverAppointment | | | | | | | | | | | | | |
-| securityInterest | | | | | | | | | | | | | |
-| mvIncluded | | | | | | | | | | | | | |
-| cautionFiling | | | | | | | | | | | | | |
-| consumerGoods | | | | | | | | | | | | | |
-| inventory | | | | | | | | | | | | | |
-| equipment | | | | | | | | | | | | | |
-| accounts | | | | | | | | | | | | | |
-| other | | | | | | | | | | | | | |
-| noFixedMaturityDate | | | | | | | | | | | | | |
-| maturityDate | | | | | | | | | | | | | |
-| fileNumber | | | | | | | | | | | | | |
+| perfectionInAnotherJurisdiction | | | X | | | | | | | | | | |
+| purchaseMoneySecurityInterest | | | X | | | | | | | | | | |
+| receiverAppointment | | | X | | | | | | | | | | |
+| securityInterest | | | X | | | | | | | | | | |
+| mvIncluded | | | | | | | | | X | | | | |
+| cautionFiling | | | | | | | | | X | | | | |
+| consumerGoods | | | | | | | | | X | | | | |
+| inventory | | | | | | | | | X | | | | |
+| equipment | | | | | | | | | X | | | | |
+| accounts | | | | | | | | | X | | | | |
+| other | | | | | | | | | X | | | | |
+| noFixedMaturityDate | | | | | | | | | X | | | | |
+| maturityDate | | | | | | | | | X | | | | |
 | qcFormTypeID | | | | | | | | | | | | | |
 | sumOfHypothec | | | | | | | | | | | | | |
 | useDefaultSumOfHypothec | | | | | | | | | | | | | |
