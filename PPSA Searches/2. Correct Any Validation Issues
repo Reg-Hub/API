@@ -1,10 +1,43 @@
 ## 1. Correct Any Validation Issues
 
-Begin by sending a POST request to the appropriate endpoint
+We begin with a _similar_ response to that we received when we created our draft in [Section 1: Create A Draft For Review](). However, in this case, we see there are some validation issues.
 
 ```
-{root}/api/v1/Orders/AssetSearches
-{root}/api/v1/Orders/DebtorSearches
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Location: {root}/api/v1/Orders/2126f1c2-378e-4fda-f1f6-08ddbd9f205b
+
+{
+    "resource": {
+        "id": "2126f1c2-378e-4fda-f1f6-08ddbd9f205b",
+        "jurisdiction": "QC",
+        "country": "CA",
+        "orderTypeID": "DebtorSearch",
+        "orderStatusTypeID": "Draft",
+        "searchParameters": {
+            "id": "54e4a839-37d2-48b7-48d2-08ddbd9f205d",
+            "exactOnlyResults": false,
+            "searchFromDate": null,
+            "isChildSearch": false
+        },
+        "parties": [
+            {
+                "partyTypeID": "BusinessDebtor",
+                "busName": "Business Name To Search",
+                "firstName": null,
+                "middleName": null,
+                "lastName": null,
+                "dateOfBirth": null
+            }
+        ],
+        "referenceNumber": "Reference number for test"
+    },
+    "validation": {
+        "errors": [],
+        "warnings": [],
+        "notices": []
+    }
+}
 ```
 
 With a request body in the format for asset searches:
