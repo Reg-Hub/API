@@ -215,3 +215,20 @@
 | RG14         | 14 |
 | RDa          | 15 |
 | RG13         | 16 |
+
+### Order Completion Times
+| Jurisdiction | Lien Time | Repair Lien Time |
+|--------------|-------------------|-------------------|
+| BC | 10s – 5 min | 10s – 5 min |
+| AB | 2 – 5 min | 2 – 5 min |
+| SK | 2 – 5 min | 2 – 5 min |
+| MB | 2 – 5 min | 2 – 5 min |
+| ON | 2 - 5 min* | 2 - 5 min* |
+| QC | 1 – ? days* | N/A |
+| YT | 1 - 5 min | 1 - 5 min |
+| NT | 1 - 5 min | 1 - 5 min |
+| NU | 1 - 5 min | 1 - 5 min |
+| NL | 1 - 5 min | N/A |
+| NB | 1 - 5 min | N/A |
+| NS | 1 - 5 min | N/A |
+| PE | 1 - 5 min | N/A |
