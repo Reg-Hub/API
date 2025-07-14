@@ -9,7 +9,7 @@ A quick note on turnaround times. These can vary wildly from a few seconds to se
 The general steps are as follows:
 1. [Create a draft for review](https://github.com/Reg-Hub/API/blob/main/PPSA%20Discharges/1.%20Create%20a%20Draft%20for%20Review.md)
 2. [Correct any validation issues](https://github.com/Reg-Hub/API/blob/main/PPSA%20Discharges/2.%20Correct%20Any%20Validation%20Issues.md)
-3. [Submit the order and wait for results](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/3.%20Submit%20Order%20and%20Wait%20for%20Results.md)
-4. [Retreive results](https://github.com/Reg-Hub/API/blob/main/PPSA%20Searches/4.%20Retreive%20Results.md)
+3. [Submit the order and wait for results](https://github.com/Reg-Hub/API/blob/main/PPSA%20Dishcarges/3.%20Submit%20Order%20and%20Wait%20for%20Results.md)
+4. [Retreive results](https://github.com/Reg-Hub/API/blob/main/PPSA%20Discharges/4.%20Retreive%20Results.md)
 
 The following sections will go into more depth on each of these steps.
