@@ -1,5 +1,3 @@
-# Values
-
 ### Jurisdiction
 | Value | Full name (not used in API, only provided here for clarity) |
 | ----- | ----------------------------------------------------------- |
