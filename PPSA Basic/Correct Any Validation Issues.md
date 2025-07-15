@@ -1,0 +1,133 @@
+## 2. Correct Any Validation Issues
+
+Validation errors must be rectified before submission is allowed. How this is handled will depend on your integration - if you are integrating from a portal you may wish to allow users to edit the fields and update the draft. However, if you are purely integrating system to system, you'll need to ensure during development that all possible validation issues are handled if no manual intervention will be possible. All the possible permutations for validation messages you could possibly receive are far too extensive for this guide. We provide a list of all validation issues you could encounter at the following endpoint. The only valid value in this endpoint for country will be "CA" as of July 8, 2025 as we do not provide these services outside Canada at this time. The possible values for jurisdiction can be found in the [values file](https://github.com/Reg-Hub/API/blob/main/PPSA%20Registrations/Values.md).
+
+```
+GET {root}/api/v1/Validation/Rules/{country}/{jurisdiction}/BasicDischarge
+GET {root}/api/v1/Validation/Rules/{country}/{jurisdiction}/BasicRenewal
+```
+
+We begin with a _similar_ response to that we received when we created our draft in [Section 1: Create A Draft For Review](https://github.com/Reg-Hub/API/blob/main/PPSA%20Basic/1.%20Create%20a%20Draft%20for%20Review.md). However, in this case, we see there are some validation issues (Again, some irrelevant fields and headers have been ommitted from the example).
+
+```
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Location: {root}/api/v1/Orders/c0af248e-a460-4847-d00b-08ddc3a71a8d
+
+{
+    "resource": {
+        "id": "c0af248e-a460-4847-d00b-08ddc3a71a8d",
+        "referenceNumber": "your_reference_number",
+        "jurisdiction": "AB",
+        "country": "CA",
+        "orderGroup": {
+            "id": "1cdbff2c-d723-4857-6dfb-08ddc3a71aa8",
+            "lastOrderType": "BasicRenewal"
+        },
+        "orderTypeID": "BasicRenewal",
+        "orderStatusTypeID": "Draft",
+        "dateRequested": "2025-07-15T14:15:59.603311+00:00",
+        "orderStatusUpdatedDate": "2025-07-15T14:15:59.603311+00:00",
+        "lien": {
+            "registrationNumber": null,
+            "term": null,
+            "expiryDate": null,
+            "isInfiniteTerm": null,
+            "currentExpiryDate": null,
+            "originalRegistrationDate": null,
+            "rin": null,
+            "fileNumber": "424214441",
+            "originalOrderTypeID": "Lien",
+            "originalQCFormTypeID": null
+        },
+        "parties": [
+            {
+                "id": "47a96fd5-18af-4804-3fed-08ddc3a71aac",
+                "busName": "business debtor",
+                "busNumber": null,
+                "dateOfBirth": null,
+                "partyTypeID": "BusinessDebtor",
+                "contactDetails": {
+                    "id": "dfd3735f-31aa-44cb-e11f-08ddc3a71ab2",
+                    "email": null,
+                    "phoneNumber": null,
+                    "faxNumber": null,
+                    "address": {
+                        "id": "42f685b7-b478-44f3-e229-08ddc3a71ab8",
+                        "streetNumber": "123",
+                        "streetName": "test ave.",
+                        "unit": null,
+                        "city": "kelowna",
+                        "jurisdiction": "BC",
+                        "postalCode": "v1m1m1",
+                        "countryCode": "CA"
+                    }
+                }
+            }
+        ]
+    },
+    "validation": {
+        "errors": [
+            {
+                "path": "Parties",
+                "message": "Parties must contain exactly 1 secured party.",
+                "userFriendlyMessage": "There must be exactly 1 secured party.",
+                "entityID": "c0af248e-a460-4847-d00b-08ddc3a71a8d",
+                "showForClient": true
+            },
+            {
+                "path": "Lien/Term",
+                "message": "Lien Term or IsInfiniteTerm must be provided, but not both.",
+                "userFriendlyMessage": "A term in the form of years or specifying infinity term must be provided, but not both.",
+                "entityID": "f8f9f538-86be-481a-57e1-08ddc3a71a9a",
+                "showForClient": true
+            }
+        ],
+        "warnings": [],
+        "notices": []
+    }
+}
+```
+
+Note the pressence of items in the "errors" array in the "validation" object. Below is a brief description of each of the errors, warnings, and notices arrays.
+
+| Field | Description | Submittable |
+| --- | --- | --- |
+| Errors | Lists actual validation errors that make the order invalid. If errors are provided, this means the order cannot be submitted until they are rectified as the registry will not accept these fields in the current state. | NO |
+| Warnings | Lists _potential_ validation issues that may be relevant to the user. If warnings are provided, the order CAN still be submitted, but the user _may_ want to have the chance to rectify these potential issues. | YES |
+| Notices | Lists any notices on the order. An example of a notice would be in Quebec, you will be notified that any text fields must be in French. We do not validate this and allow submission whether it is in French or English, but we do notify you. | YES |
+
+### Useful Endpoints
+
+Orders may be updated by sending a representation of the updated order to the endpoint:
+
+```
+PUT {root}/api/v1/Orders/BasicDischarges/{orderID}
+PUT {root}/api/v1/Orders/BasicRenewals/{orderID}
+```
+
+For example, if I wanted to correct the validation error in the above response that says "A term in the form of years or specifying infinity term must be provided, but not both.", I might send a PUT request of the order in the state I received back, except with term provided.
+
+Orders may also be updated using a PATCH document ([RFC 6902](https://datatracker.ietf.org/doc/html/rfc6902)):
+
+```
+PATCH {root}/api/v1/Orders/BasicDischarges/{orderID}
+PATCH {root}/api/v1/Orders/BasicRenewals/{orderID}
+```
+
+The expected successful responses from both PUT and PATCH requests are 200 OK with a response similar to the one provided at the start of this section, containing the now updated representation of the order in the response body.
+
+If you wish to delete the order and start over you can use the same urls with the method set to DELETE.
+
+Another useful endpoint to get the current state of the orders is the following:
+
+```
+GET {root}/api/v1/Orders/BasicDischarges/{orderID}
+GET {root}/api/v1/Orders/BasicRenewals/{orderID}
+Accept: application/json
+Accept: application/vnd.reghub.order-with-validation+json
+```
+
+Setting the accept header to application/json (or */*) will return a representation of the order. Setting the accept header to application/vnd.reghub.order-with-validation+json will return the same response as that which you get on POST, PUT, or PATCH requests (the "resource" with the order and the "validation" with the validation issues).
+
+Once your order no longer has any validation errors, [you are ready to submit](https://github.com/Reg-Hub/API/blob/main/PPSA%20Basic/3.%20Submit%20Order%20and%20Wait%20for%20Results.md).
