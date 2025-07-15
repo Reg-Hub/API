@@ -1,0 +1,39 @@
+## 3. Submit Order and Wait for Results
+
+Once your order no longer has entries in the errors array, it is ready for submission. This is a very simple operation:
+
+```
+POST {root}/api/v1/Orders/BasicDischarges/{orderID}/Submit
+POST {root}/api/v1/Orders/BasicRenewals/{orderID}/Submit
+```
+
+Simply send a POST request to the above endpoints with any or no request body. The expected response for success is 204 No Content with no request body.
+
+Once your order is submitted it will be in the state "Pending". It may fall into a number of other states (notably "Exception") at which point our operations team will intervene in that order in a production environment (note this likely will not happen in testing environments). __You may treat any state that is not "Complete" as "I am still waiting for the order to complete."__ In order to get the current order status, we recommend one of two methods:
+
+### Waiting and Polling
+
+The recommended endpoint to poll for an order's status is 
+
+```
+GET {root}/api/v1/Orders/{orderID}/Status
+```
+
+which will return a response like so:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/json; charset=utf-8
+
+{
+  "status": "Pending"
+}
+```
+
+See the [values file for a table of typical completion times for these order types](https://github.com/Reg-Hub/API/blob/main/PPSA%20Basic/Values.md). Once the order is in the status "Complete" you may cease polling and retreive results for the order.
+
+### Callback
+
+We do offer callback functionality, but that is beyond the scope of this guide. Please reach out to our team directly if you wish to pursue this route.
+
+Once your order is complete, you may [retreive results](https://github.com/Reg-Hub/API/blob/main/PPSA%20Basic/4.%20Retreive%20Results.md).
