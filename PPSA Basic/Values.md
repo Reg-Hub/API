@@ -21,6 +21,12 @@
 | 1 | TotalDischarge |
 | 2 | AgreementToDischarge |
 
+### Original Order Type
+| Number Value | String Value |
+| ----- | ----- |
+| 1 | Lien |
+| 7 | RepairLien |
+
 ### Basic Discharge Fields
 | Field Name               | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
 |--------------------------|----|----|----|----|----|----|----|----|----|----|----|----|----|
@@ -41,16 +47,17 @@
 | Field Name               | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
 |--------------------------|----|----|----|----|----|----|----|----|----|----|----|----|----|
 | registrationNumber       | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
-| term                     |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| isInfiniteTerm           |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| expiryDate               |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| currentExpiryDate        |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| originalRegistrationDate |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| term                     | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| isInfiniteTerm           | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| expiryDate               |    |    | X  |    |    |    |    |    |    |    | X  | X  |    |
+| currentExpiryDate        |    |    |    |    |    |    |    |    | X  |    | X  |    |    |
+| originalRegistrationDate |    |    |    |    |    |    |    |    |    |    | X  |    |    |
 | rin                      |    |    |    |    |    |    |    |    |    |    |    | X  |    |
 | fileNumber               |    |    |    |    |    |    |    |    | X  |    |    |    |    |
+| originalOrderTypeID      |    |    |    |    |    |    |    |    | X  |    |    |    |    |
 | originalQCFormTypeID     |    |    |    |    |    |    |    |    |    |    | X  |    |    |
-| dischargeType            |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| parties                  |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| dischargeType            |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| parties                  | X  | X  | X  |    |    |    |    |    | X  |    | X  |    |    |
 
 ### PartyTypeID
 | String Value               | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
