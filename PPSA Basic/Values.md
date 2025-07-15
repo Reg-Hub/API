@@ -24,26 +24,33 @@
 ### Basic Discharge Fields
 | Field Name               | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
 |--------------------------|----|----|----|----|----|----|----|----|----|----|----|----|----|
-| term                    |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| isInfiniteTerm          |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| expiryDate              |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| currentExpiryDate       |    |    |    |    |    |    |    |    |    |    |    |    |    |
-| originalRegistrationDate|    |    |    |    |    |    |    |    |    |    |    |    |    |
-| rin                     |    |    |    |    |    |    |    |    |    |    |    | X  |    |
-| fileNumber              |    |    |    |    |    |    |    |    | X  |    |    |    |    |
-| originalQCFormTypeID    |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| registrationNumber       | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| term                     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| isInfiniteTerm           |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| expiryDate               |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| currentExpiryDate        |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| originalRegistrationDate |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| rin                      |    |    |    |    |    |    |    |    |    |    |    | X  |    |
+| fileNumber               |    |    |    |    |    |    |    |    | X  |    |    |    |    |
+| originalOrderTypeID      |    |    |    |    |    |    |    |    | X  |    |    |    |    |
+| originalQCFormTypeID     |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| dischargeType            |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| parties                  | X  | X  | X  |    |    |    |    |    | X  |    | X  |    |    |
 
 ### Basic Renewal Fields
-| Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
-|---|---|---|---|---|---|---|---|---|
-| term | | | | | | | | | | | | | |
-| isInfiniteTerm | | | | | | | | | | | | | |
-| expiryDate | | | | | | | | | | | | | |
-| currentExpiryDate | | | | | | | | | | | | | |
-| originalRegistrationDate | | | | | | | | | | | | | |
-| rin | | | | | | | | | | | | | X |
-| fileNumber | | | | | | | | | X | | | | |
-| originalQCFormTypeID | | | | | | | | | | | X | | |
+| Field Name               | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
+|--------------------------|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| registrationNumber       | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
+| term                     |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| isInfiniteTerm           |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| expiryDate               |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| currentExpiryDate        |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| originalRegistrationDate |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| rin                      |    |    |    |    |    |    |    |    |    |    |    | X  |    |
+| fileNumber               |    |    |    |    |    |    |    |    | X  |    |    |    |    |
+| originalQCFormTypeID     |    |    |    |    |    |    |    |    |    |    | X  |    |    |
+| dischargeType            |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| parties                  |    |    |    |    |    |    |    |    |    |    | X  |    |    |
 
 ### PartyTypeID
 | String Value               | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
