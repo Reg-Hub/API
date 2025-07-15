@@ -15,6 +15,12 @@
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
 
+### Discharge Type
+| Number Value | String Value |
+| ----- | ----- |
+| 1 | TotalDischarge |
+| 2 | AgreementToDischarge |
+
 ### Lien Fields (Lien)
 | Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC* | SK | YT |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|
