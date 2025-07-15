@@ -21,93 +21,29 @@
 | 1 | TotalDischarge |
 | 2 | AgreementToDischarge |
 
-### Lien Fields (Lien)
-| Field Name | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC* | SK | YT |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
-| term | X | X | X | X | X | X | X | X | X | X | X | X | X | 
-| isInfiniteTerm | X | X | X | X | X | X | X | X | X | X | X | X | X |
-| expiryDate | | | X | | | | | | X | X | |
-| amount | | | | | | | | | | | X | | |
-| additionalInformation | X | | X | X | X | X | X | X | | X | X | | X |
-| generalCollateral.collateralValue | X | X | X | X | X | X | X | X | X | X | X | X | X |
-| trustIndenture | X | X | X | | | | | | | | | X | |
-| stillHavePossession | | | | | | | | | | | | | |
-| vehicleReleasedDate | | | | | | | | | | | | | |
-| workLastCompletedDate | | | | | | | | | | | | | |
-| partsProvidedDate | | | | | | | | | | | | | |
-| otherChanges | X | | | | | | | | | | | | |
-| courtOrder | X | | | | | | | | | | | | |
-| surrenderDate | | | | | | | | | | | | | |
-| serviceLastRendered | | | | | | | | | | | | | |
-| dateOfLien | | | | | | | | | | | | | |
-| systemGeneratedRIN | | | | | | | | | | | | X | |
-| rin | | | | | | | | | | | | | X |
-| noRIN | | | | | | | | | | | | X | |
-| perfectionInAnotherJurisdiction | | | X | | | | | | | | | | |
-| purchaseMoneySecurityInterest | | | X | | | | | | | | | | |
-| receiverAppointment | | | X | | | | | | | | | | |
-| securityInterest | | | X | | | | | | | | | | |
-| mvIncluded | | | | | | | | | X | | | | |
-| cautionFiling | | | | | | | | | X | | | | |
-| consumerGoods | | | | | | | | | X | | | | |
-| inventory | | | | | | | | | X | | | | |
-| equipment | | | | | | | | | X | | | | |
-| accounts | | | | | | | | | X | | | | |
-| other | | | | | | | | | X | | | | |
-| noFixedMaturityDate | | | | | | | | | X | | | | |
-| maturityDate | | | | | | | | | X | | | | |
-| qcFormTypeID | | | | | | | | | | | X | | |
-| sumOfHypothec | | | | | | | | | | | X | | |
-| useDefaultSumOfHypothec | | | | | | | | | | | X | | |
-| signingDate | | | | | | | | | | | X | | |
-| signingCity | | | | | | | | | | | X | | |
-| signingJurisdiction | | | | | | | | | | | X | | |
-| signingCountry | | | | | | | | | | | X | | |
+### Basic Discharge Fields
+| Field Name               | AB | BC | MB | NB | NL | NS | NT | NU | ON | PE | QC | SK | YT |
+|--------------------------|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| term                    |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| isInfiniteTerm          |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| expiryDate              |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| currentExpiryDate       |    |    |    |    |    |    |    |    |    |    |    |    |    |
+| originalRegistrationDate|    |    |    |    |    |    |    |    |    |    |    |    |    |
+| rin                     |    |    |    |    |    |    |    |    |    |    |    | X  |    |
+| fileNumber              |    |    |    |    |    |    |    |    | X  |    |    |    |    |
+| originalQCFormTypeID    |    |    |    |    |    |    |    |    |    |    | X  |    |    |
 
-\*QC field relevance will depend on the value of qcFormTypeID. During integration you should be told by your business team/project manager what form types to be using for QC.
-
-### Lien Fields (Repair Lien)
+### Basic Renewal Fields
 | Field Name | AB | BC | MB | NT | NU | ON | SK | YT |
 |---|---|---|---|---|---|---|---|---|
-| term | | X | | | | X | X | |
-| isInfiniteTerm | | X | | | | | X | |
-| expiryDate | | | | | | | X | |
-| amount | | | | | | | | |
-| additionalInformation | X | | | X | X | | | X |
-| generalCollateral.collateralValue | | X | | | | X | X | |
-| trustIndenture | | | | | | | | |
-| stillHavePossession | X | | X | | | | | |
-| vehicleReleasedDate | X | | | | | | | |
-| workLastCompletedDate | X | | | | | | | |
-| partsProvidedDate | X | | | | | | | |
-| otherChanges | X | | | | | | | |
-| courtOrder | X | | | | | | | |
-| surrenderDate | | | X | | | | | |
-| serviceLastRendered | | | X | | | | | |
-| dateOfLien | | | | X | X | | | X |
-| systemGeneratedRIN | | | | | | | X | |
-| rin | | | | | | | X | |
-| noRIN | | | | | | | | |
-| perfectionInAnotherJurisdiction | | | | | | | | |
-| purchaseMoneySecurityInterest | | | | | | | | |
-| receiverAppointment | | | | | | | | |
-| securityInterest | | | | | | | | |
-| mvIncluded | | | | | | X | | |
-| cautionFiling | | | | | | | | |
-| consumerGoods | | | | | | | | |
-| inventory | | | | | | | | |
-| equipment | | | | | | | | |
-| accounts | | | | | | | | |
-| other | | | | | | | | |
-| noFixedMaturityDate | | | | | | | | |
-| maturityDate | | | | | | | | |
-| qcFormTypeID | | | | | | | | |
-| sumOfHypothec | | | | | | | | |
-| useDefaultSumOfHypothec | | | | | | | | |
-| signingDate | | | | | | | | |
-| signingCity | | | | | | | | |
-| signingJurisdiction | | | | | | | | |
-| signingCountry | | | | | | | | |
+| term | | | | | | | | | | | | | |
+| isInfiniteTerm | | | | | | | | | | | | | |
+| expiryDate | | | | | | | | | | | | | |
+| currentExpiryDate | | | | | | | | | | | | | |
+| originalRegistrationDate | | | | | | | | | | | | | |
+| rin | | | | | | | | | | | | | X |
+| fileNumber | | | | | | | | | X | | | | |
+| originalQCFormTypeID | | | | | | | | | | | X | | |
 
 ### PartyTypeID
 | String Value               | ID  | AB | BC | SK | MB | ON | QC | YT | NT | NU | NL | NB | NS | PE |
