@@ -1,3 +1,5 @@
+The following tables detail the values used/allowed for fields and jurisdictions.
+
 ### Jurisdiction
 | Value | Full name (not used in API, only provided here for clarity) |
 | ----- | ----------------------------------------------------------- |
