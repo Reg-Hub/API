@@ -66,8 +66,6 @@
 | IndividualDebtor           |  2  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
 | BusinessSecuredParty       |  3  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
 | IndividualSecuredParty     |  4  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  | X  |
-| BusinessRegisteringAgent   |  5  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
-| IndividualRegisteringAgent |  6  |    | X  | X  | X  | X  |    |    |    |    |    |    |    |    |
 | BusinessDealer             |  7  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 | IndividualDealer           |  8  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 
