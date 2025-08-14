@@ -72,11 +72,11 @@ The following tables detail the values used/allowed for fields and jurisdictions
 | IndividualDealer           |  8  |    |    |    |    |    | X  |    |    |    |    |    |    |    |
 
 ### Required Parties
-| String Value               | ID  | AB | BC | SK | MB | ON | QC                          | YT | NT | NU | NL | NB | NS | PE |
-| -------------------------- | --- | -- | -- | -- | -- | -- | --------------------------- | -- | -- | -- | -- | -- | -- | -- |
-| Debtor                     |  1  | 1  | 1  |    | 1  | 1  | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
-| Secured Party              |  2  |    |    |    |    |    | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
-| Dealer                     |  3  | 1  |    |    | 1  |    | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
+| String Value               | AB | BC | SK | MB | ON | QC                          | YT | NT | NU | NL | NB | NS | PE |
+| -------------------------- | -- | -- | -- | -- | -- | --------------------------- | -- | -- | -- | -- | -- | -- | -- |
+| Debtor                     | 1  | 1  |    | 1  | 1  | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
+| Secured Party              |    |    |    |    |    | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
+| Dealer                     | 1  |    |    | 1  |    | ALL PRESENT ON REGISTRATION |    |    |    |    |    |    |    |
 
 ### QCFormTypeID
 | String Value | ID |
