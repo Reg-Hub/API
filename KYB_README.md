@@ -36,18 +36,17 @@ A typical request to create a business search order would look like the followin
 
 ```
 {
-  "referenceNumber": "your_reference_number",
+  "referenceNumber": "string",
   "jurisdiction": "_M",
   "country": "CA",
   "businessSearchCriteria": {
-    "businessSearchCriteriaTypeID": "Name",
-    "name": "business_name_criteria_as_a_string",
-    "number": "business_number_criteria_as_a_string"
+    "businessSearchCriteriaTypeID": "string",
+    "businessSearchScopeID": enumerated,
+    "name": "string",
+    "number": "string"
   },
   "searchParameters": {
-    "searchJurisdictions": [
-      "BC", "AB", "SK", "MB", "ON"
-    ]
+    "searchJurisdictions": string[]
   }
 }
 ```
@@ -56,6 +55,8 @@ You may search by either name or number. The possible values for the field busin
 
 - Name
 - Number
+
+The field "businessSearchScopeID" has the possible values of "Full" (1) and "Fast" (2). If not provided, this will default to however your account is configured. In the "Full" scope, the order will reach out to each individual provincial registry along with the centralized Canadian database in order to perform the search. This takes significantly longer (~20-35s) than the "Fast" version. With the "Fast" scope, we only reach out to the centralized database, and this usually takes only a second or two, but could take up to ~5-10s with vague criteria. So the tradeoff between "Full" and "Fast" is comprehensive results but slower turnaround with "Full", and less comprehensive results but much faster turnaround time with "Fast". We generally recommend you stay with "Full" unless you have business reasons to need a very fast turnaround time.
 
 The possible values for the searchJurisdictions field are as follows (and may be one to many):
 
