@@ -37,7 +37,7 @@ A typical request to create a business search order would look like the followin
 ```
 {
   "referenceNumber": "string",
-  "jurisdiction": "_M",
+  "jurisdiction": "_M", <---- Always "_M" for this order type
   "country": "CA",
   "businessSearchCriteria": {
     "businessSearchCriteriaTypeID": "string",
@@ -46,7 +46,9 @@ A typical request to create a business search order would look like the followin
     "number": "string"
   },
   "searchParameters": {
-    "searchJurisdictions": string[]
+    "searchJurisdictions": [
+      "AB", "BC" ...
+    ]
   }
 }
 ```
