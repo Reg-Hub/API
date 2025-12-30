@@ -16,3 +16,4 @@ The following tables detail the values used/allowed for fields and jurisdictions
 | NB | New Brunswick |
 | NS | Nova Scotia |
 | PE | Prince Edward Island |
+| _F | Federal |
