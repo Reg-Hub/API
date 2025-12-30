@@ -1,1 +1,120 @@
+## 1. Create a Draft for review
 
+Creating an ultimate beneficial ownership report order requires that a completed business report order already exists to be used as the "original" or "base" order. For more information on this topic, [please visit our KYB order information page.](https://github.com/Reg-Hub/API/blob/main/KYB_README.md)
+
+Begin by sending a POST request to the following endpoint
+
+```
+POST {root}/api/v1/Orders/UltimateBeneficialOwnershipReports
+```
+
+With a request body in the following format:
+
+```
+{
+  "referenceNumber": string,
+  "originalOrderID": Guid
+  "orderGroupID": Guid
+  "ultimateBeneficialOwnershipRequest": {
+    "templateID": Guid
+  },
+  "attestor": {
+    "firstName": string,
+    "middleName": string,
+    "lastName": string,
+    "contactDetails": {
+      "email": string,
+      "phoneNumber": string,
+      "address": {
+        "streetNumber": string,
+        "streetName": string,
+        "unit": string,
+        "city": string,
+        "jurisdiction": string,
+        "postalCode": string,
+        "countryCode": string
+      }
+    }
+  }
+}
+```
+
+You may pass originalOrderID only, orderGroupID only, or both. If you pass both, originalOrderID is preferred and used. The originalOrderID is the order ID of the business report you wish to create a UBO order for. The order group ID is the order group ID of the business report order you wish to create a UBO order for. Bothe methods of creating the UBO order are supplied for the convenience of the developer.
+
+The templateID field inside tihe ultimateBeneficialOwernshipRequest object is required and will depend on your own business logic. You may have access to 1-n templates. You can get a list of the templates you have access to at the endpoint
+
+```
+GET {root}/api/v1/AttestationTemplates
+```
+
+Please be advised that the above list of templates is paginated so ensure you examine the x-pagination headers to make sure you have acquired all the templates. You can set the pageSize query parameter to 100 to ensure you are getting all the templates.
+
+The attestor is a required field. It is the name and contact information of the person that will be required to fill out the attestation form. The first/last name fields are required, along with the email. Phone and address field requirements will depend on the templateID selected (varies based on identity verification flows configured for the templates).
+
+A successful order draft creation respones will look like the following example:
+
+```
+HTTP/1.1 201 Created
+Content-Type: application/json; charset=utf-8
+Location: {root}/api/v1/Orders/b2c03f10-6389-4fa8-e73d-08de47190e3c
+
+{
+    "resource": {
+        "id": "b2c03f10-6389-4fa8-e73d-08de47190e3c",
+        "referenceNumber": "your_reference_number",
+        "jurisdiction": "NS",
+        "country": "CA",
+        "orderGroup": {
+            "id": "54425829-2cde-4f10-add1-08de4717a64c",
+            "lastOrderType": "UltimateBeneficialOwnershipReport"
+        },
+        "orderTypeID": "UltimateBeneficialOwnershipReport",
+        "orderStatusTypeID": "Draft",
+        "dateRequested": "2025-12-30T04:54:01.3702698+00:00",
+        "orderStatusUpdatedDate": "2025-12-30T04:54:01.3702699+00:00",
+        "ultimateBeneficialOwnershipRequest": {
+            "entityName": "BUSINESS NAME OF ENTITY",
+            "entityNumber": "BUSINESS NUMBER OF ENTITY",
+            "secondaryTransactionID": null,
+            "primaryTransactionID": null,
+            "hasIdRequirement": false,
+            "attestorIdentityRequirement": "None",
+            "attestorIdentityResult": "Pending",
+            "attestorAssociatedWithReport": false,
+            "clientNumber": null,
+            "requiresAtLeastOneShareholder": false,
+            "minimumSharholderPercentage": null,
+            "hasDeclaredNoBeneficialOwners": false,
+            "idvResults": null,
+            "questions": [],
+            "documents": [],
+            "shareholders": [],
+            "templateID": "5faaa0f5-2ae1-4511-e22f-08ddf45e6e27"
+        },
+        "parties": [
+            {
+                "firstName": "FIRST NAME OF ATTESTOR",
+                "middleName": "MIDDLE NAME OF ATTESTOR",
+                "lastName": "LAST NAME OF ATTESTOR",
+                "partyTypeID": "IndividualAttestor",
+                "contactDetails": {
+                    "email": "EMAIL OF ATTESTOR",
+                    "phoneNumber": null,
+                    "address": null
+                }
+            }
+        ]
+    },
+    "validation": {
+        "errors": [],
+        "warnings": [],
+        "notices": []
+    }
+}
+```
+
+Note that not all headers in the response have been provided in the above example as most are irrelevant for the purposes of this guide. Also note that some fields from the response body have been ommitted as they are irrelevant for the purposes of this guide.
+
+Note that the "validations" section contains multiple empty arrays. Validation will be handled in the following section 2.
+
+Once you have created your draft, [it is ready for review and submission.](https://github.com/Reg-Hub/API/blob/main/UBO/2.%20Correct%20Any%20Validation%20Issues.md)
