@@ -205,6 +205,7 @@ Note: For dealers in QC, the validity of this provided party type depends on the
 | NoResult | 1 |
 | RawDocument | 2 |
 | ParsedDocument | 3 |
+
 #### Order State
 | Description | Value |
 | ----------- | ----- |

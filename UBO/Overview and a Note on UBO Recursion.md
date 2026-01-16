@@ -1,4 +1,4 @@
-# Ultimate Beneficial Ownesrhip Report API Integration Guide
+# Ultimate Beneficial Ownership Report API Integration Guide
 
 The following is an integration guide for ultimate beneficial ownership reports.
 
