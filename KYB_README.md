@@ -86,15 +86,18 @@ The possible values for the searchJurisdictions field are as follows (and may be
 
 ## Notes on Business Search Results Scoring
 
-Business Search results are scored based on proximity of the result to the search criteria.  The score is a measurement of how many changes to the string are required to make the result match the criteria exactly (after some cleaning).  The search is completed with the criteria as provided, but for scoring results we clean both the search criteria and the result prior to scoring. Here are some examples of cleaning that will happen on both the search criteria and result:
+Prior to performing any scoring we perform some normalization of the result string. this includes
+- Removing all punctuation and special characters (@, ?, !, <, >, etc.)
+- Removing all legal endings from business name (LTD, LLC, CO, etc.)
+- Replacing any accented characters with non-accented versions
+- Changing all letters to upper case (in effect performing case-insensitive scoring)
 
-- Remove all punctuation and special characters (@, ?, !, <, >, etc.)
-- Remove all legal endings from business name (LTD, LLC, CO, etc.)
-- Replace any accented characters with non-accented versions
+The scoring works as follows:
+- We start by performing a version of the [Levenshtein string distance algorithm](https://en.wikipedia.org/wiki/Levenshtein_distance) to determine the initial distance between the criteria string and each result string.
+- If a result is an EP (extra-provincial registration) it adds 0.25 to the score. This is because normally you want to pull the report on the entity in its home jurisdiction as that report will have the current status and the directors/officers. Reports on EPs (depending on the jurisdiction) often show significantly less data. For example, Ontario EP reports do not show the status, directors, or officers of the entity; they tell you to refer to the home jurisdiction.
+- If a result is inactive it adds 0.25 to the score. This is to favor active entities.
 
-Additionally, we add partial scores to entity which are no longer active or are registered extra-provincially. This is so that in the case of multiple results, active registrations in their home jurisdiction will be scored better.
-
-If the search criteria (business name) is an exact character-for-character match of the result, you can expect a score of < 1. (0 if it's also active and registered in that jurisdiction). (edited
+_A score of 0 is an exact match. The lower the score, the stronger the match._
 
 ## Business Reports
 
