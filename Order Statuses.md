@@ -3,7 +3,7 @@
 Below is a description of order statuses orders may encounter.
 
 | Value | User Action? | Description |
-| ----- | ----------------------------------------------------------- |
+| ----- | ----------------------------------------------------------- | ------------------ |
 | Draft | X | Order has been drafted on your end, but not yet submitted to RegHub. At this stage the order can be edited, deleted, or submitted. The user action in this state is to complete the draft and submit the order. |
 | Pending |   | Order has been submitted to RegHub for processing and it is awaiting results. |
 | Complete | X | Order has been completed and you can now poll for any documents or data. The user action in this state is to retreive and/or view the results of your order. |
