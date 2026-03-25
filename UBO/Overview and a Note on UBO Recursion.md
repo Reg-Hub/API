@@ -11,7 +11,7 @@ You may be required to perform additional business reports and UBOs on any benef
 ## Performing the Ultimate Beneficial Ownership Report
 
 The general steps are as follows:
-1. [Create a draft for review](https://github.com/Reg-Hub/API/blob/main/UBO/1.%20Create%20a%20UBO%20order%20Draft)
+1. [Create a draft for review](https://github.com/Reg-Hub/API/blob/main/UBO/1.%20Create%20a%20UBO%20order%20Draft.md)
 2. [Correct any validation issues](https://github.com/Reg-Hub/API/blob/main/UBO/2.%20Correct%20Any%20Validation%20Issues.md)
 3. [Submit the order and wait for results](https://github.com/Reg-Hub/API/blob/main/UBO/3.%20Submit%20Order%20and%20Wait%20for%20Results.md)
 4. [Retreive hub report](https://github.com/Reg-Hub/API/blob/main/UBO/4.%20Retrieve%20Hub%20Report.md)
