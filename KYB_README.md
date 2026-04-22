@@ -15,6 +15,8 @@ A typical workflow would look like the following (each step is one or more API c
 - Wait and poll for the business search order to be in status "Complete" (these orders will take less than 10 seconds to complete the vast majority of the time).
 - Retrieve the business search results at the /Results endpoint.
 
+We will determine if the business report is requestable for the business entity. This will be indicated by the ``` IsReportAvailable ``` field on the search result. Most entities are available, but certain entity types are not available based on the jurisdiction
+
 At this point, you must perform decisioning on whether or not to continue based on the results returned. If you are continuing, the business report workflow would look like the following:
 
 - Create a business report order with the number you wish to get a profile for via the POST endpoint
