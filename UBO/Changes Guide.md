@@ -11,4 +11,6 @@ A business report order is no longer a prerequisite for ordering a UBO order at 
 # Mapping
 
 Previously, shareholders existed at the path endpoint 
-`/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}`
+`
+/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}
+`
