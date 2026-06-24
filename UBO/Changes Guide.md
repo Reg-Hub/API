@@ -136,7 +136,7 @@ The order ID passed for this call can be _any_ business report or UBO order subm
 
 - uboTrees
   - New field
-  - This is an array of top shareholder nodes. For the purposes of this response the original entity of interest is treated as a shareholder of itself owning 100% of itself. It is an array for future capability plans - for now you may assume it contains one and only one element.
+  - This is an array of top shareholder nodes. For the purposes of this response the original entity of interest is treated as a shareholder of itself owning 100% of itself. It is an array for future capability plans. You may assume it contains one and only one element.
 
 - uboTrees/{index}/parentID
   - Analogous to the path `/hubReportOrders/{index}/parentHubReportOrderID` found at endpoint `GET /api/v1/Orders/{orderID}/HubReport` but not a direct one to one mapping.
