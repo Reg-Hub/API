@@ -11,7 +11,7 @@ The intial required steps (business search to validate the business number, busi
 
 The endpoint `/api/v1/Orders/{orderID}/HubReport/OwnershipSummary` remains unchanged between "v1" and "v2".
 
-A business report order is no longer a prerequisite for ordering a UBO order at any level other than the first level. A UBO order may be ordered against any business shareholder that does not itself have business shareholders. For example, if the attestor has provided 100% of the shareholders for business A, of which business B is holding 50% of, and 25% of the shareholders for business B, but your requirement is to collect at least 76% of the ownership percentage of business A, you would then want to order a UBO order on business A to collect the shareholders of that business.
+A business report order is no longer a prerequisite for ordering a UBO order at any level other than the first level. A UBO order may be ordered against any business shareholder. For example, if the attestor has provided 100% of the shareholders for business A, of which business B is holding 50% of, and 25% of the shareholders for business B, but your requirement is to collect at least 76% of the ownership percentage of business A, you would then want to order a UBO order on business A to collect the shareholders of that business.
 
 The mechanism through which orders are placed for business shareholders has changed. Previously the original order ID was used, now the ID of the shareholder node itself is used.
 
