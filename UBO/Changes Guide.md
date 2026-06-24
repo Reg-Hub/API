@@ -59,11 +59,7 @@ The order ID passed for this call can be _any_ business report or UBO order subm
         "jobTitle": "string",
         "hasOneNameOnly": true,
         "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
-        "partyType": {
-          "id": "None",
-          "name": "string"
-        },
-        "partyTypeID": "None",
+        "partyTypeID": "IndividualShareholder",
         "contactDetails": {
           "email": "string",
           "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
@@ -115,3 +111,15 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   ]
 }
 ```
+
+Of significant note are the items near the bottom of this data schema.
+
+- children
+  - _These elements have the exact same shape as the above schema._ This is a JSON representation of a tree of shareholders.
+- ownershipPercentageOfParent: This lists the ownership percentage _this_ shareholder holds of it's _immediate parent._
+- ownershipPercentageOfRoot: This lists the ownership percentage _this_ shareholder holds of the _top level_ entity.
+- isValidated: This tells if the attestor validated this shareholder (if it is a business shareholder). It's not recommended to order a business report off a shareholder where this is false as there is a high chance of not receiving results.
+- isUnregisteredEntity: This tells if the attestor explicitly listed this shareholder as unregistered. Do not order a business report for this entity as you will not receive results.
+- businessCountry: This tells where the business is registered. This may be different than the shareholder's address country.
+- businessJurisdiction: This tells where the business is registered. This may be different than the shareholder's address jurisdiction.
+- hasDeclaredNoSignificantShareholders: This tells when the attestore has listed this shareholder
