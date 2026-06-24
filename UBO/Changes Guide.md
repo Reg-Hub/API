@@ -115,11 +115,24 @@ The order ID passed for this call can be _any_ business report or UBO order subm
 Of significant note are the items near the bottom of this data schema.
 
 - children
+  - Business shareholders only 
   - _These elements have the exact same shape as the above schema._ This is a JSON representation of a tree of shareholders.
-- ownershipPercentageOfParent: This lists the ownership percentage _this_ shareholder holds of it's _immediate parent._
-- ownershipPercentageOfRoot: This lists the ownership percentage _this_ shareholder holds of the _top level_ entity.
-- isValidated: This tells if the attestor validated this shareholder (if it is a business shareholder). It's not recommended to order a business report off a shareholder where this is false as there is a high chance of not receiving results.
-- isUnregisteredEntity: This tells if the attestor explicitly listed this shareholder as unregistered. Do not order a business report for this entity as you will not receive results.
-- businessCountry: This tells where the business is registered. This may be different than the shareholder's address country.
-- businessJurisdiction: This tells where the business is registered. This may be different than the shareholder's address jurisdiction.
-- hasDeclaredNoSignificantShareholders: This tells when the attestore has listed this shareholder
+- ownershipPercentageOfParent
+  - This lists the ownership percentage _this_ shareholder holds of it's _immediate parent._
+- ownershipPercentageOfRoot
+  - This lists the ownership percentage _this_ shareholder holds of the _top level_ entity.
+- isValidated
+  - Business shareholders only 
+  - This tells if the attestor validated this shareholder (if it is a business shareholder). It's not recommended to order a business report off a shareholder where this is false as there is a high chance of not receiving results.
+- isUnregisteredEntity
+  - Business shareholders only
+  - This tells if the attestor explicitly listed this shareholder as unregistered. Do not order a business report for this entity as you will not receive results.
+- businessCountry
+  - Business shareholders only
+  - This tells where the business is registered. This may be different than the shareholder's address country.
+- businessJurisdiction
+  - Business shareholders only 
+  - This tells where the business is registered. This may be different than the shareholder's address jurisdiction.
+- hasDeclaredNoSignificantShareholders
+  - Business shareholders only 
+  - This tells when the attestore has listed this shareholder as having no shareholders owning 25% or more.
