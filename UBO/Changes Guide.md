@@ -20,6 +20,7 @@ The mechanism through which orders are placed for business shareholders has chan
 Previously, shareholders existed at the endpoint 
 
 ```
+GET
 /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}
 ```
 
@@ -34,6 +35,7 @@ This was only shareholders supplied by one attestor for one level of the overall
 Now, shareholders exist at the endpoint
 
 ```
+GET
 Accept: application/vnd.reghub.hub-report-with-ubo-trees+json
 /api/v1/Orders/{orderID}/HubReport
 ```
@@ -122,7 +124,7 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   - This field only has one possible value at this time: "UltimateBeneficialOwnership".
 
 - reference
-  - Previously found at endpoint `/api/v1/Orders/{orderID}/HubReport and path: `/reference`
+  - Previously found at endpoint `GET /api/v1/Orders/{orderID}/HubReport and path: `/reference`
   - This field is copied from the reference passed from the initial business report order.
 
 - country
@@ -130,18 +132,18 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   - This field is copied from the country passed from the initial business report order.
 
 - jurisdiction
-  - Previously found at endpoint `/api/v1/Orders/{orderID}/HubReport` and path: `/jurisdiction`
+  - Previously found at endpoint `GET /api/v1/Orders/{orderID}/HubReport` and path: `/jurisdiction`
 
 - uboTrees
   - New field
   - This is an array of top shareholder nodes. For the purposes of this response the original entity of interest is treated as a shareholder of itself owning 100% of itself. It is an array for future capability plans - for now you may assume it contains one and only one element.
 
 - uboTrees/{index}/parentID
-  - Analogous to the path `/hubReportOrders/{index}/parentHubReportOrderID` found at endpoint `/api/v1/Orders/{orderID}/HubReport` but not a direct one to one mapping.
+  - Analogous to the path `/hubReportOrders/{index}/parentHubReportOrderID` found at endpoint `GET /api/v1/Orders/{orderID}/HubReport` but not a direct one to one mapping.
   - This will always be null for the root entity (the entity that we are trying to discover the ultimate beneficial ownership for).
 
 - uboTrees/{index}/party
-  - Previously found at endpoint `/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/party`
+  - Previously found at endpoint `GET /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/party`
   - ALL FIELDS INSIDE THIS OBJECT/ELEMENT ARE THE SAME AS "v1"
 
 - uboTrees/{index}/orders
@@ -154,7 +156,7 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   - _These elements have the exact same shape as the above schema._ This is a JSON representation of a tree of shareholders.
 
 - uboTrees/{index}/ownershipPercentageOfParent
-  - Previously found at endpoint `/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/ownershipPercentage`
+  - Previously found at endpoint `GET /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/ownershipPercentage`
   - This lists the ownership percentage _this_ shareholder holds of it's _immediate parent._
 
 - uboTrees/{index}/ownershipPercentageOfRoot
@@ -163,7 +165,7 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   - This, compared with the sum of this business shareholder's child shareholder percentages, can be used to easily determine if the information already provided for this business shareholder meets your requirements.
 
 - uboTrees/{index}/isValidated
-  - Previously found at endpoint `/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/isValidated`
+  - Previously found at endpoint `GET /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/isValidated`
   - Business shareholders only 
   - This tells if the attestor validated this shareholder (if it is a business shareholder). It's not recommended to order a business report off a shareholder where this is false as there is a high chance of not receiving results.
 
@@ -173,12 +175,12 @@ The order ID passed for this call can be _any_ business report or UBO order subm
   - This tells if the attestor explicitly listed this shareholder as unregistered. Do not order a business report for this entity as you will not receive results.
 
 - uboTrees/{index}/businessCountry
-  - Previously found at endpoint `/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/businessCountry`
+  - Previously found at endpoint `GET /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/businessCountry`
   - Business shareholders only
   - This tells where the business is registered. This may be different than the shareholder's address country.
 
 - uboTrees/{index}/businessJurisdiction
-  - Previously found at endpoint `/api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/businessJurisdiction`
+  - Previously found at endpoint `GET /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}` and path: `/ultimateBeneficialOwnershipRequest/shareholders/{index}/businessJurisdiction`
   - Business shareholders only 
   - This tells where the business is registered. This may be different than the shareholder's address jurisdiction.
 
