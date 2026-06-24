@@ -10,8 +10,108 @@ A business report order is no longer a prerequisite for ordering a UBO order at 
 
 # Mapping
 
-Previously, shareholders existed at the path endpoint 
+Previously, shareholders existed at the endpoint 
 
 ```
 /api/v1/Orders/UltimateBeneficialOwnershipReports/{orderID}
+```
+
+at the path 
+
+```
+/UltimateBeneficialOwnershipRequest/Shareholders
+```
+
+This was only shareholders supplied by one attestor for one level of the overall tree.
+
+Now, shareholders exist at the endpoint
+
+```
+Accept: application/vnd.reghub.hub-report-with-ubo-trees+json
+/api/v1/Orders/{orderID}/HubReport
+```
+
+The order ID passed for this call can be _any_ business report or UBO order submitted for this hub report. This endpoint returns the current state of the _entire_ shareholder tree in the following shape. The swagger docs have some extra fields on there but these are the relevant ones for UBO orders:
+
+```
+{
+  "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "envelopeID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+  "hubReportType": "UltimateBeneficialOwnership",
+  "reference": "string",
+  "country": "string",
+  "jurisdiction": "string",
+  "uboTrees": [
+    {
+      "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "hubReportID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "hubReportReference": "string",
+      "parentID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "partyID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "party": {
+        "busName": "string",
+        "firstName": "string",
+        "middleName": "string",
+        "lastName": "string",
+        "isEstate": true,
+        "dateOfBirth": "2026-06-24T16:25:08.085Z",
+        "busNumber": "string",
+        "jobTitle": "string",
+        "hasOneNameOnly": true,
+        "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+        "partyType": {
+          "id": "None",
+          "name": "string"
+        },
+        "partyTypeID": "None",
+        "contactDetails": {
+          "email": "string",
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "address": {
+            "unit": "string",
+            "streetNumber": "string",
+            "streetName": "string",
+            "streetType": "string",
+            "quadrant": "st",
+            "city": "string",
+            "postalCode": "string",
+            "jurisdiction": "st",
+            "countryCode": "st",
+            "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          },
+        },
+        "name": "string"
+      },
+      "orders": [
+        {
+          "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+          "referenceNumber": "string",
+          "orderTypeID": "BusinessReport",
+          "orderStatusTypeID": "Draft",
+          "jurisdiction": "string",
+          "displayJurisdiction": "string",
+          "country": "string",
+          "dateRequested": "2026-06-24T16:25:08.086Z",
+          "orderStatusUpdatedDate": "2026-06-24T16:25:08.086Z",
+          "isVisible": true,
+          "orderTypeName": "string",
+          "description": "string",
+          "orderGroupID": "3fa85f64-5717-4562-b3fc-2c963f66afa6"
+        }
+      ],
+      "createdForOrderID": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+      "children": [
+        { } // This is a recursive array. The elements in this array have the same shape as this parent element.
+      ],
+      "ownershipPercentageOfParent": 0,
+      "ownershipPercentageOfRoot": 0,
+      "remainingOwnershipPercentage": 0,
+      "isValidated": true,
+      "isUnregisteredEntity": true,
+      "businessCountry": "string",
+      "businessJurisdiction": "string",
+      "hasDeclaredNoSignificantShareholders": true
+    }
+  ]
+}
 ```
