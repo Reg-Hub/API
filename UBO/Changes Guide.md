@@ -5,7 +5,7 @@ The purpose of this document is to describe the changes required to move from a 
 
 # High Level Discussion of Changes
 
-The afforementioned improvements necessitated database schema changes and response shape changes. All of the data available in "v1" is still available in "v2" - retreiving the data is a mapping exercise. Shareholders are no longer found in the UBO order. Shareholders are available in actual tree form all at one endpoint.
+The aforementioned improvements necessitated database schema changes and response shape changes. All of the data available in "v1" is still available in "v2" - retreiving the data is a mapping exercise. Shareholders are no longer found in the UBO order. Shareholders are available in actual tree form all at one endpoint.
 
 The intial required steps (business search to validate the business number, business report to pull the data from the registry, and the initial UBO order) remain unchanged and are still required to initiate any ultimate beneficial ownership request.
 
